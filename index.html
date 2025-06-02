@@ -3,466 +3,934 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probability and Statistics Exam Solutions</title>
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-        h1, h2, h3 { color: #333; }
-        .test-title { text-align: center; margin-bottom: 20px; font-size: 1.5em; border-bottom: 2px solid #333; padding-bottom: 10px;}
-        .question-set { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; background-color: #fff; }
-        .part-title { font-size: 1.2em; color: #0056b3; margin-top: 20px; margin-bottom: 10px; border-bottom: 1px dashed #0056b3; padding-bottom: 5px;}
-        .question { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-        .question:last-child { border-bottom: none; }
-        .question strong { display: block; margin-bottom: 5px; color: #333; }
-        .solution { background-color: #f9f9f9; padding: 10px; border-left: 3px solid #007bff; margin-top: 5px; border-radius: 3px;}
-        .answer { font-weight: bold; color: #28a745; margin-top:10px; display: block; }
-        .formula { margin: 10px 0; padding: 5px; background-color: #e9ecef; border-radius: 3px; text-align: center; }
-        table { border-collapse: collapse; width: auto; margin: 10px 0; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <title>Probability & Stochastic Processes Exam</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+    <header>
+        <h1>20BSMA401 - Probability Theory And Stochastic Processes</h1>
+        <p>B.E ECE & CCE - II/IV</p>
+        <p>Continuous Assessment Tests</p>
+    </header>
 
-    <h1>Probability and Statistics Exam Solutions</h1>
+    <main>
+        <section id="test1">
+            <h2>Continuous Assessment Test - I (04.03.2025)</h2>
 
-    <!-- CONTINUOUS ASSESSMENT TEST - I -->
-    <div class="question-set">
-        <h2 class="test-title">CONTINUOUS ASSESSMENT TEST - I (Question Paper Code: 25AU41F181)</h2>
-
-        <h3 class="part-title">PART - B (10 × 2 = 20 Marks)</h3>
-
-        <div class="question">
-            <strong>11. If X and Y are independent random variables with variances 2 and 3. Find the variance of 3X + 4Y.</strong>
-            <div class="solution">
-                <p>Given: \(Var(X) = 2\), \(Var(Y) = 3\). X and Y are independent.</p>
-                <p>We need to find \(Var(3X + 4Y)\).</p>
-                <p>For independent X and Y, \(Var(aX + bY) = a^2 Var(X) + b^2 Var(Y)\).</p>
-                <p>\(Var(3X + 4Y) = 3^2 Var(X) + 4^2 Var(Y) = 9(2) + 16(3) = 18 + 48 = 66\)</p>
-                <p class="answer">Answer: The variance of 3X + 4Y is 66.</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>12. If the density function of a continuous random variable X is given by</strong>
-            <p>\(f(x) = \begin{cases} ax, & 0 \le x \le 1 \\ a, & 1 \le x \le 2 \\ 3a-ax, & 2 \le x \le 3 \\ 0, & \text{otherwise} \end{cases}\)</p>
-            <strong>find a.</strong>
-            <div class="solution">
-                <p>For \(f(x)\) to be a PDF, \(\int_{-\infty}^{\infty} f(x) dx = 1\).</p>
-                <p>\(\int_0^1 ax \,dx + \int_1^2 a \,dx + \int_2^3 (3a-ax) \,dx = 1\)</p>
-                <p>\(a \left[ \frac{x^2}{2} \right]_0^1 + a [x]_1^2 + \left[ 3ax - a\frac{x^2}{2} \right]_2^3 = 1\)</p>
-                <p>\(\frac{a}{2} + a + (9a - \frac{9a}{2}) - (6a - 2a) = 1\)</p>
-                <p>\(\frac{a}{2} + a + \frac{9a}{2} - 4a = 1 \implies \frac{a+2a+9a-8a}{2} = 1 \implies \frac{4a}{2} = 1 \implies 2a = 1 \implies a = \frac{1}{2}\)</p>
-                <p class="answer">Answer: The value of a is \(\frac{1}{2}\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>13. The mean and variance of binomial distribution are 5 and 4. Determine the probability distribution.</strong>
-            <div class="solution">
-                <p>Mean \(\mu = np = 5\). Variance \(\sigma^2 = np(1-p) = 4\).</p>
-                <p>\(5(1-p) = 4 \implies 1-p = \frac{4}{5} \implies p = \frac{1}{5}\).</p>
-                <p>\(n(\frac{1}{5}) = 5 \implies n = 25\).</p>
-                <p>PMF: \(P(X=k) = \binom{25}{k} \left(\frac{1}{5}\right)^k \left(\frac{4}{5}\right)^{25-k}\), for \(k = 0, 1, \dots, 25\).</p>
-                <p class="answer">Answer: \(P(X=k) = \binom{25}{k} (\frac{1}{5})^k (\frac{4}{5})^{25-k}\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>14. A typist types 2 letters erroneously for every 100 letters. What is the probability that the tenth letter typed is the first letter with an error?</strong>
-            <div class="solution">
-                <p>Probability of error \(p = \frac{2}{100} = 0.02\). Probability of correct \(q = 1-p = 0.98\).</p>
-                <p>Geometric distribution: \(P(X=k) = q^{k-1}p\).</p>
-                <p>\(P(X=10) = (0.98)^{9} (0.02) \approx 0.83374776 \times 0.02 \approx 0.0167\).</p>
-                <p class="answer">Answer: \(\approx 0.0167\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>15. The moment generating function of a random variable X is given by \(M(t) = e^{3(e^t-1)}\). What is \(P[X=0]\)?</strong>
-            <div class="solution">
-                <p>This is MGF of Poisson distribution with \(\lambda = 3\).</p>
-                <p>PMF: \(P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}\).</p>
-                <p>\(P(X=0) = \frac{e^{-3} 3^0}{0!} = e^{-3} \approx 0.0498\).</p>
-                <p class="answer">Answer: \(e^{-3} \approx 0.0498\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>16. A random variable X is uniformly distributed between 3 and 15. Find Var(X).</strong>
-            <div class="solution">
-                <p>For \(U(a,b)\), \(Var(X) = \frac{(b-a)^2}{12}\).</p>
-                <p>\(Var(X) = \frac{(15-3)^2}{12} = \frac{12^2}{12} = 12\).</p>
-                <p class="answer">Answer: Var(X) = 12.</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>17. The cumulative distribution function of a continuous random variable is given by</strong>
-            <p>\(F(x) = \begin{cases} 0, & x < 0 \\ 1-e^{-x}, & 0 \le x < \infty \end{cases}\)</p>
-            <strong>Find the pdf and mean of X.</strong>
-            <div class="solution">
-                <p>PDF \(f(x) = \frac{dF(x)}{dx} = e^{-x}\) for \(x \ge 0\), (0 otherwise).</p>
-                <p>Mean \(E[X] = \int_0^{\infty} x e^{-x} dx = 1\).</p>
-                <p class="answer">Answer: pdf \(f(x) = e^{-x}\) for \(x \ge 0\). Mean \(E[X] = 1\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>18. The joint pdf of the random variable (X, Y) is \(f(x,y) = k(x+y), 0 < x < 2; 0 < y < 2\). Find the value of k.</strong>
-            <div class="solution">
-                <p>\(\int_0^2 \int_0^2 k(x+y) \,dx \,dy = 1 \implies k \int_0^2 (2+2y) \,dy = 1 \implies k[2y+y^2]_0^2 = 1 \implies 8k=1 \implies k = \frac{1}{8}\).</p>
-                <p class="answer">Answer: \(k = \frac{1}{8}\).</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>19. The joint p.d.f of the two-dimensional random variable (X, Y) is given by \(f(x,y) = kxye^{-(x^2+y^2)}, x > 0, y > 0\). Find i) k. ii) Prove that X and Y are independent.</strong>
-            <div class="solution">
-                <p>i) \(k \left( \int_0^{\infty} x e^{-x^2} \,dx \right) \left( \int_0^{\infty} y e^{-y^2} \,dy \right) = 1\). Each integral is \(1/2\). So \(k(1/4)=1 \implies k=4\).</p>
-                <p>ii) \(f_X(x) = 2xe^{-x^2}\), \(f_Y(y) = 2ye^{-y^2}\). \(f_X(x)f_Y(y) = 4xye^{-(x^2+y^2)} = f(x,y)\).</p>
-                <p class="answer">Answer: i) \(k=4\). ii) X and Y are independent.</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>20. Show that \(f(x,y) = \frac{2}{5}(2x+3y), 0 \le x \le 1, 0 \le y \le 1\) is a joint pdf of X and Y.</strong>
-            <div class="solution">
-                <p>1. \(f(x,y) \ge 0\) in the domain. 2. \(\int_0^1 \int_0^1 \frac{2}{5}(2x+3y) \,dx \,dy = \frac{2}{5} \int_0^1 (1+3y) \,dy = \frac{2}{5} [y+\frac{3y^2}{2}]_0^1 = \frac{2}{5}(\frac{5}{2}) = 1\).</p>
-                <p class="answer">Answer: \(f(x,y)\) is a joint PDF.</p>
-            </div>
-        </div>
-
-        <h3 class="part-title">PART - C (2 × 10 = 20 Marks)</h3>
-        <div class="question">
-            <strong>21. a) A random variable X has the probability distribution given in the table...</strong>
-            <div class="solution">
-                <p><strong>a) Value of K:</strong> \(10K^2 + 9K - 1 = 0 \implies K = 1/10\).</p>
-                <p><strong>b) \(P(1.5 < X < 4.5 | X > 2) = 5/7\).</strong></p>
-                <p><strong>c) \(P(X < 6) = 81/100\), \(P(X \ge 6) = 19/100\), \(P(0 < X < 5) = 8/10\).</strong></p>
-                <p><strong>d) Smallest n for \(P(X \le n) > 1/2\) is 4.</strong></p>
-                <p><strong>e) Distribution function \(F(x)\):</strong></p>
-                <p>\(F(x) = \begin{cases} 0 & x < 1 \\ 1/10 & 1 \le x < 2 \\ 3/10 & 2 \le x < 3 \\ 1/2 & 3 \le x < 4 \\ 4/5 & 4 \le x < 5 \\ 81/100 & 5 \le x < 6 \\ 83/100 & 6 \le x < 7 \\ 1 & x \ge 7 \end{cases}\)</p>
-                <p class="answer">Answers as detailed above.</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>21. b) (Or) i) Poisson distribution with mean 1.8. Find P(no breakdown), P(one breakdown), P(at least one breakdown).</strong>
-            <div class="solution">
-                <p>\(\lambda = 1.8\). \(P(X=k) = \frac{e^{-1.8}(1.8)^k}{k!}\).</p>
-                <p>i) \(P(X=0) = e^{-1.8} \approx 0.1653\).</p>
-                <p>ii) \(P(X=1) = e^{-1.8}(1.8) \approx 0.2975\).</p>
-                <p>iii) \(P(X \ge 1) = 1 - P(X=0) \approx 1 - 0.1653 = 0.8347\).</p>
-                <p class="answer">Answers: i) \(\approx 0.1653\). ii) \(\approx 0.2975\). iii) \(\approx 0.8347\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>21. b) (Or) ii) Normal distribution, \(\mu=1000, \sigma=200\). 2000 lamps. Find i) No. lamps fail in first 700 hrs. ii) Period for 10% failure.</strong>
-            <div class="solution">
-                <p>i) \(P(X \le 700) = P(Z \le \frac{700-1000}{200}) = P(Z \le -1.5) = 1 - \Phi(1.5) = 1 - 0.9332 = 0.0668\).</p>
-                <p>Number of lamps = \(2000 \times 0.0668 = 133.6 \approx 134\).</p>
-                <p>ii) \(P(X \le x_0) = 0.10 \implies P(Z \le \frac{x_0-1000}{200}) = 0.10\).</p>
-                <p>\(\frac{x_0-1000}{200} \approx -1.28 \implies x_0 = 1000 - 1.28(200) = 1000 - 256 = 744\) hours.</p>
-                <p class="answer">Answers: i) \(\approx 134\) lamps. ii) 744 hours.</p>
-            </div>
-        </div>
-
-        <div class="question">
-            <strong>22. a) Joint PMF \(P(x,y) = k(2x+y)\), \(x,y \in \{0,1,2\}\). Find marginal and conditional distributions.</strong>
-            <div class="solution">
-                <p>\(k = 1/27\). (Table provided in previous detailed solution)</p>
-                <p>Marginal for X: \(P_X(0)=1/9, P_X(1)=1/3, P_X(2)=5/9\).</p>
-                <p>Marginal for Y: \(P_Y(0)=2/9, P_Y(1)=1/3, P_Y(2)=4/9\).</p>
-                <p>Conditional \(P(Y=y|X=x)\) and \(P(X=x|Y=y)\) as detailed previously.</p>
-                <p class="answer">Detailed distributions provided previously.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>22. b) (Or) Joint PDF \(f(x,y) = \frac{1}{8}(6-x-y); 0 < x < 2, 2 < y < 4\). Find (i) \(P(X < 1 \cap Y < 3)\) (ii) \(P(X < 1 | Y < 3)\) (iii) \(P(X+Y < 3)\).</strong>
-            <div class="solution">
-                <p>i) \(P(X < 1, Y < 3) = \int_2^3 \int_0^1 \frac{1}{8}(6-x-y) \,dx \,dy = \frac{3}{8}\).</p>
-                <p>ii) \(P(Y < 3) = \int_2^3 \int_0^2 \frac{1}{8}(6-x-y) \,dx \,dy = \frac{5}{8}\).</p>
-                <p>\(P(X < 1 | Y < 3) = \frac{P(X < 1, Y < 3)}{P(Y < 3)} = \frac{3/8}{5/8} = \frac{3}{5}\).</p>
-                <p>iii) \(P(X+Y < 3) = \int_0^1 \int_2^{3-x} \frac{1}{8}(6-x-y) \,dy \,dx = \frac{5}{24}\).</p>
-                <p class="answer">Answers: i) \(3/8\). ii) \(3/5\). iii) \(5/24\).</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- CONTINUOUS ASSESSMENT TEST - II -->
-    <div class="question-set">
-        <h2 class="test-title">CONTINUOUS ASSESSMENT TEST - II (Question Paper Code: 25AU42A184)</h2>
-
-        <h3 class="part-title">PART - B (6 × 2 = 12 Marks)</h3>
-        <div class="question">
-            <strong>6. Write the properties of Correlation Coefficient.</strong>
-            <div class="solution">
-                <p>Let \(\rho(X,Y)\) be the correlation coefficient.</p>
+            <section id="partA1">
+                <h3>Part A (10 Marks)</h3>
                 <ol>
-                    <li>\(-1 \le \rho(X,Y) \le 1\).</li>
-                    <li>If \(\rho(X,Y) = 1\), perfect positive linear relationship.</li>
-                    <li>If \(\rho(X,Y) = -1\), perfect negative linear relationship.</li>
-                    <li>If \(\rho(X,Y) = 0\), X and Y are uncorrelated.</li>
-                    <li>If X and Y are independent, then \(\rho(X,Y) = 0\). Converse not always true.</li>
-                    <li>\(\rho(X,Y) = \rho(Y,X)\).</li>
-                    <li>\(\rho(aX+b, cY+d) = \frac{ac}{|ac|} \rho(X,Y)\) for \(a,c \neq 0\).</li>
+                    <li>If \(P(A) = \frac{1}{3}\), \(P(B) = \frac{3}{4}\), \(P(A \cup B) = \frac{11}{12}\) then \(P(A|B) =\) <b>d) 1/4</b></li>
+                    <li>\(Var(5x + 2)\) is <b>a) 25 var (x)</b></li>
+                    <li>The moment generating function of a discrete distribution is \((0.6 + 0.4e^t)^6\). The mean value of this distribution is <b>d) 2.4</b></li>
+                    <li>If the moment generating function of a discrete random variable X, taking values 1,2,..., ∞, is \(\frac{4}{5}e^t(1 - \frac{1}{5}e^t)^{-1}\) then \(E(X)\) is <b>a) 5/4</b></li>
+                    <li>If the probability that an applicant for a driver's license will pass the road test on any given trial is 0.8, then the probability that he will finally pass the test in the fourth trial is <b>(a) 0.064</b></li>
+                    <li>If \(Z = X + Y\), where X and Y are independent normal random variables, then the distribution of Z is: <b>c) Normal</b></li>
+                    <li>If \(f_{X,Y}(x, y)\) is the joint pdf of (X, Y), the marginal pdf of X is obtained by: <b>a) Integrating \(f_{X,Y}(x, y)\) over y</b></li>
+                    <li>If (X,Y) is a two-dimensional continuous random variable then X and Y are independent if <b>(b) \(f(x,y) = f_X(x)f_Y(y)\)</b></li>
+                    <li>For the following joint probability distribution of (X, Y), the value of k is <b>b) 1/36</b>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Y\X</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>3k</td>
+                                    <td>6k</td>
+                                    <td>9k</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5k</td>
+                                    <td>8k</td>
+                                    <td>11k</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>7k</td>
+                                    <td>10k</td>
+                                    <td>13k</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>If the joint density function of a random variable (X, Y) is given by
+                        \(f(x,y) = \begin{cases} \frac{1}{24}xy, & 1 \leq x \leq 3, 2 \leq y \leq 4 \\ 0, & \text{elsewhere} \end{cases}\)
+                        then the marginal density function of Y, \(f_Y(y)\) is <b>c) y/8, 2 ≤ y ≤ 4</b></li>
                 </ol>
-            </div>
-        </div>
-        <div class="question">
-            <strong>7. State Central Limit Theorem for independent identically distributed random variables.</strong>
-            <div class="solution">
-                <p>Let \(X_1, \dots, X_n\) be i.i.d. random variables with mean \(\mu\) and variance \(\sigma^2\). Let \(S_n = \sum X_i\). Then as \(n \to \infty\), \(Z_n = \frac{S_n - n\mu}{\sigma\sqrt{n}}\) converges in distribution to \(N(0,1)\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>8. Define a strictly stationary random process.</strong>
-            <div class="solution">
-                <p>A random process \(\{X(t)\}\) is strictly stationary if for any \(t_1, \dots, t_n\) and any \(h\), the joint CDF of \(X(t_1), \dots, X(t_n)\) is the same as the joint CDF of \(X(t_1+h), \dots, X(t_n+h)\).</p>
-                <p>\(F_{X(t_1), \dots, X(t_n)}(x_1, \dots, x_n) = F_{X(t_1+h), \dots, X(t_n+h)}(x_1, \dots, x_n)\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>9. Define Cross Correlation.</strong>
-            <div class="solution">
-                <p>For real random processes \(X(t)\) and \(Y(t)\), the cross-correlation function is \(R_{XY}(t_1, t_2) = E[X(t_1)Y(t_2)]\). If jointly WSS, \(R_{XY}(\tau) = E[X(t)Y(t+\tau)]\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>10. Find the variance of the stationary process \(\{X(t)\}\) whose auto correlation function is given by \(R_{XX}(\tau) = 2+4e^{-2|\tau|}\).</strong>
-            <div class="solution">
-                <p>\(Var(X(t)) = R_{XX}(0) - (E[X(t)])^2\). \(R_{XX}(0) = 2+4e^0 = 6\).</p>
-                <p>\((E[X(t)])^2 = \lim_{|\tau|\to\infty} R_{XX}(\tau) = 2\).</p>
-                <p>\(Var(X(t)) = 6 - 2 = 4\).</p>
-                <p class="answer">Answer: Variance = 4.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>11. State any two properties of the power spectral density function.</strong>
-            <div class="solution">
-                <p>Let \(S_{XX}(\omega)\) be the PSD.</p>
+            </section>
+
+            <section id="partB1">
+                <h3>Part B (20 Marks)</h3>
+
+                <article class="question">
+                    <h4>If X and Y are independent random variables with variances 2 and 3. Find the variance of 3X + 4Y.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>\(Var(3X + 4Y) = 3^2Var(X) + 4^2Var(Y)\) (since X and Y are independent)</p>
+                        <p>\(Var(3X + 4Y) = 9 \cdot 2 + 16 \cdot 3 = 18 + 48 = 66\)</p>
+                        <p><b>Answer: 66</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>If the density function of a continuous random variable X is given by
+                        \(f(x) = \begin{cases} ax, & 0 \leq x \leq 1 \\ a, & 1 \leq x \leq 2 \\ 3a - ax, & 2 \leq x \leq 3 \\ 0, & \text{otherwise} \end{cases}\)
+                        find a.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The integral of the pdf over its entire range must equal 1.</p>
+                        <p>\(\int_{0}^{1} ax \, dx + \int_{1}^{2} a \, dx + \int_{2}^{3} (3a - ax) \, dx = 1\)</p>
+                        <p>\(\frac{a}{2}x^2\Big|_0^1 + ax\Big|_1^2 + (3ax - \frac{a}{2}x^2)\Big|_2^3 = 1\)</p>
+                        <p>\(\frac{a}{2} + a(2-1) + (3a(3-2) - \frac{a}{2}(9-4)) = 1\)</p>
+                        <p>\(\frac{a}{2} + a + 3a - \frac{5a}{2} = 1\)</p>
+                        <p>\(4a - 2a = 1\)</p>
+                        <p>\(2a = 1\)</p>
+                        <p>\(a = \frac{1}{2}\)</p>
+                        <p><b>Answer: a = 1/2</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>The mean and variance of binomial distribution are 5 and 4. Determine the probability distribution.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>For a binomial distribution, mean = np and variance = npq, where n is the number of trials, p is the probability of success, and q is the probability of failure (q = 1 - p).</p>
+                        <p>Given: np = 5 and npq = 4</p>
+                        <p>Dividing the variance by the mean: \(\frac{npq}{np} = \frac{4}{5}\)</p>
+                        <p>\(q = \frac{4}{5}\)</p>
+                        <p>\(p = 1 - q = 1 - \frac{4}{5} = \frac{1}{5}\)</p>
+                        <p>Now, find n: \(np = 5 \Rightarrow n \cdot \frac{1}{5} = 5 \Rightarrow n = 25\)</p>
+                        <p>The probability mass function of a binomial distribution is given by: \(P(X = k) = \binom{n}{k} p^k q^{n-k}\), where \(\binom{n}{k}\) is the binomial coefficient (n choose k).</p>
+                        <p>Therefore, the probability distribution is: \(P(X = k) = \binom{25}{k} \left(\frac{1}{5}\right)^k \left(\frac{4}{5}\right)^{25-k}\), for k = 0, 1, 2, ..., 25</p>
+                        <p><b>Answer: \(P(X = k) = \binom{25}{k} \left(\frac{1}{5}\right)^k \left(\frac{4}{5}\right)^{25-k}\), for k = 0, 1, 2, ..., 25</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>A typist types 2 letters erroneously for every 100 letters. What is the probability that the tenth letter typed is the first letter with an error?</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The probability of typing a letter erroneously is \(p = \frac{2}{100} = 0.02\)</p>
+                        <p>The probability of typing a letter correctly is \(q = 1 - p = 1 - 0.02 = 0.98\)</p>
+                        <p>We want the first 9 letters to be correct and the 10th letter to be erroneous. This is a geometric distribution.</p>
+                        <p>\(P(X = 10) = q^9 \cdot p = (0.98)^9 \cdot 0.02\)</p>
+                        <p>\(P(X = 10) \approx 0.01667\)</p>
+                        <p><b>Answer: Approximately 0.01667</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>The moment generating function of a random variable X is given by \(M(t) = e^{3(e^t-1)}\). What is P[X = 0]?</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The given MGF is of a Poisson distribution with parameter \(\lambda = 3\).</p>
+                        <p>The probability mass function of a Poisson distribution is \(P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\)</p>
+                        <p>We want to find \(P(X = 0)\), so \(k = 0\).</p>
+                        <p>\(P(X = 0) = \frac{e^{-3} \cdot 3^0}{0!} = e^{-3} \cdot \frac{1}{1} = e^{-3}\)</p>
+                        <p>\(P(X = 0) \approx 0.04979\)</p>
+                        <p><b>Answer: Approximately 0.04979</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>A random variable X is uniformly distributed between 3 and 15. Find Var(X).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>For a uniform distribution between a and b, the variance is given by \(Var(X) = \frac{(b - a)^2}{12}\)</p>
+                        <p>In this case, \(a = 3\) and \(b = 15\).</p>
+                        <p>\(Var(X) = \frac{(15 - 3)^2}{12} = \frac{(12)^2}{12} = \frac{144}{12} = 12\)</p>
+                        <p><b>Answer: 12</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>The cumulative distribution function of a continuous random variable is given by
+                        \(F(x) = \begin{cases} 0, & x < 0 \\ 1 - e^{-x/5}, & 0 \leq x < \infty \end{cases}\)
+                        Find the pdf and mean of X.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>To find the pdf, we differentiate the CDF with respect to x.</p>
+                        <p>\(f(x) = \frac{d}{dx} F(x) = \frac{d}{dx} (1 - e^{-x/5}) = \frac{1}{5}e^{-x/5}\), for \(x \geq 0\)</p>
+                        <p>\(f(x) = 0\), for \(x < 0\)</p>
+                        <p>The mean of an exponential distribution with parameter λ is 1/λ. In this case, λ = 1/5.</p>
+                        <p>\(E(X) = \frac{1}{\lambda} = 5\)</p>
+                        <p><b>Answer: pdf: \(f(x) = \frac{1}{5}e^{-x/5}\), \(x \geq 0\); Mean: 5</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>The joint pdf of the random variable (X, Y) is
+                        \(f(x, y) = \begin{cases} k(x + y), & 0 < x < 2; 0 < y < 2 \\ 0, & \text{otherwise} \end{cases}\)
+                        Find the value of k.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The double integral of the joint pdf over its entire range must equal 1.</p>
+                        <p>\(\int_{0}^{2} \int_{0}^{2} k(x + y) \, dy \, dx = 1\)</p>
+                        <p>\(k \int_{0}^{2} \left[xy + \frac{1}{2}y^2\right]_0^2 \, dx = 1\)</p>
+                        <p>\(k \int_{0}^{2} (2x + 2) \, dx = 1\)</p>
+                        <p>\(k \left[x^2 + 2x\right]_0^2 = 1\)</p>
+                        <p>\(k (4 + 4) = 1\)</p>
+                        <p>\(8k = 1\)</p>
+                        <p>\(k = \frac{1}{8}\)</p>
+                        <p><b>Answer: k = 1/8</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>The joint p.d.f of the two-dimensional random variable (X, Y) is given by
+                        \(f(x,y) = \begin{cases} kxye^{-(x^2+y^2)}, & x > 0, y > 0 \\ 0, & \text{otherwise} \end{cases}\)
+                        Find i) k. ii) Prove that X and Y are independent.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>i) Finding k:</b></p>
+                        <p>\(\int_{0}^{\infty} \int_{0}^{\infty} kxye^{-(x^2+y^2)} \, dy \, dx = 1\)</p>
+                        <p>\(k \int_{0}^{\infty} xe^{-x^2} \int_{0}^{\infty} ye^{-y^2} \, dy \, dx = 1\)</p>
+                        <p>Let \(u = x^2\) and \(v = y^2\), then \(du = 2x \, dx\) and \(dv = 2y \, dy\)</p>
+                        <p>\(k \int_{0}^{\infty} e^{-u} \frac{1}{2} \, du \int_{0}^{\infty} e^{-v} \frac{1}{2} \, dv = 1\)</p>
+                        <p>\(\frac{k}{4} \int_{0}^{\infty} e^{-u} \, du \int_{0}^{\infty} e^{-v} \, dv = 1\)</p>
+                        <p>\(\frac{k}{4} [-e^{-u}]_0^\infty [-e^{-v}]_0^\infty = 1\)</p>
+                        <p>\(\frac{k}{4} (1)(1) = 1\)</p>
+                        <p>\(k = 4\)</p>
+                        <p><b>ii) Proving Independence:</b></p>
+                        <p>\(f(x, y) = 4xye^{-(x^2+y^2)} = (2xe^{-x^2}) \cdot (2ye^{-y^2})\)</p>
+                        <p>Let \(f_X(x) = 2xe^{-x^2}\) and \(f_Y(y) = 2ye^{-y^2}\)</p>
+                        <p>Since \(f(x, y) = f_X(x) \cdot f_Y(y)\), X and Y are independent.</p>
+                        <p><b>Answer: i) k = 4, ii) X and Y are independent.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Show that \(f(x,y) = \frac{2}{5}(2x + 3y)\), \(0 \leq x \leq 1\), \(0 \leq y \leq 1\) is a joint pdf of X and Y.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>To show that f(x, y) is a joint pdf, we need to show that it is non-negative over the given range and that its double integral over the range is equal to 1.</p>
+                        <p>1. Non-negativity: Since \(0 \leq x \leq 1\) and \(0 \leq y \leq 1\), \(2x \geq 0\) and \(3y \geq 0\). Therefore, \(2x + 3y \geq 0\), and \(\frac{2}{5}(2x + 3y) \geq 0\). So, f(x, y) is non-negative.</p>
+                        <p>2. Integral: We need to evaluate the double integral of f(x, y) over the given range.</p>
+                        <p>\(\int_{0}^{1} \int_{0}^{1} \frac{2}{5}(2x + 3y) \, dy \, dx\)</p>
+                        <p>\(\frac{2}{5} \int_{0}^{1} \left[2xy + \frac{3}{2}y^2\right]_0^1 \, dx\)</p>
+                        <p>\(\frac{2}{5} \int_{0}^{1} \left(2x + \frac{3}{2}\right) \, dx\)</p>
+                        <p>\(\frac{2}{5} \left[x^2 + \frac{3}{2}x\right]_0^1\)</p>
+                        <p>\(\frac{2}{5} \left(1 + \frac{3}{2}\right) = \frac{2}{5} \left(\frac{5}{2}\right) = 1\)</p>
+                        <p>Since the double integral is equal to 1, f(x, y) is a joint pdf.</p>
+                        <p><b>Answer: The function is a joint pdf.</b></p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="partC1">
+                <h3>Part C (20 Marks)</h3>
+
+                <article class="question">
+                    <h4>a) A random variable X has the following probability distribution.
+                        <br>
+                        | X | 0 | 1 | 2K | 3 | 4 | 5 | 6 | 7 |
+                        |------|---|---|-----|-----|-----|-----|------|----------|
+                        | P(x) | 0 | K | 2K | 2K | 3K | K² | 2K² | 7K² + K |
+                        <br>
+                        Find:
+                        <br>
+                        a) the value of K.
+                        <br>
+                        b) \(P(1.5 < X < 4.5 \mid X > 2)\)
+                        <br>
+                        c) Evaluate \(P(X < 6)\), \(P(X \geq 6)\), and \(P(0 < X < 5)\)
+                        <br>
+                        d) The smallest value of n for which \(P(X \leq n) > \frac{1}{2}\)
+                        <br>
+                        e) Find the distribution function of X.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>a) Finding the value of K:</b></p>
+                        <p>The sum of all probabilities must equal 1.</p>
+                        <p>\(0 + K + 2K + 2K + 3K + K^2 + 2K^2 + 7K^2 + K = 1\)</p>
+                        <p>\(10K^2 + 9K = 1\)</p>
+                        <p>\(10K^2 + 9K - 1 = 0\)</p>
+                        <p>Using the quadratic formula: \(K = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</p>
+                        <p>\(K = \frac{-9 \pm \sqrt{81 + 40}}{20} = \frac{-9 \pm \sqrt{121}}{20} = \frac{-9 \pm 11}{20}\)</p>
+                        <p>\(K = \frac{2}{20} = \frac{1}{10}\) or \(K = \frac{-20}{20} = -1\)</p>
+                        <p>Since probabilities cannot be negative, \(K = \frac{1}{10} = 0.1\)</p>
+                        <p><b>b) \(P(1.5 < X < 4.5 \mid X > 2)\):</b></p>
+                        <p>\(P(1.5 < X < 4.5 \mid X > 2) = \frac{P(1.5 < X < 4.5 \cap X > 2)}{P(X > 2)}\)</p>
+                        <p>\(P(1.5 < X < 4.5 \cap X > 2) = P(3 \leq X \leq 4) = P(X = 3) + P(X = 4) = 2K + 3K = 5K = 5 \cdot \frac{1}{10} = \frac{1}{2}\)</p>
+                        <p>\(P(X > 2) = P(X = 3) + P(X = 4) + P(X = 5) + P(X = 6) + P(X = 7) = 2K + 3K + K^2 + 2K^2 + 7K^2 + K = 6K + 10K^2 = 6 \cdot \frac{1}{10} + 10 \cdot \frac{1}{100} = \frac{6}{10} + \frac{1}{10} = \frac{7}{10}\)</p>
+                        <p>\(P(1.5 < X < 4.5 \mid X > 2) = \frac{\frac{1}{2}}{\frac{7}{10}} = \frac{1}{2} \cdot \frac{10}{7} = \frac{5}{7}\)</p>
+                        <p><b>c) Evaluate \(P(X < 6)\), \(P(X \geq 6)\), and \(P(0 < X < 5)\):</b></p>
+                        <p>\(P(X < 6) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5) = 0 + K + 2K + 2K + 3K + K^2 = 8K + K^2 = 8 \cdot \frac{1}{10} + \frac{1}{100} = \frac{80}{100} + \frac{1}{100} = \frac{81}{100} = 0.81\)</p>
+                        <p>\(P(X \geq 6) = P(X = 6) + P(X = 7) = 2K^2 + 7K^2 + K = 9K^2 + K = 9 \cdot \frac{1}{100} + \frac{1}{10} = \frac{9}{100} + \frac{10}{100} = \frac{19}{100} = 0.19\)</p>
+                        <p>\(P(0 < X < 5) = P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) = K + 2K + 2K + 3K = 8K = 8 \cdot \frac{1}{10} = \frac{8}{10} = 0.8\)</p>
+                        <p><b>d) The smallest value of n for which \(P(X \leq n) > \frac{1}{2}\):</b></p>
+                        <p>\(P(X \leq 0) = 0\)</p>
+                        <p>\(P(X \leq 1) = P(X = 0) + P(X = 1) = 0 + K = \frac{1}{10} = 0.1\)</p>
+                        <p>\(P(X \leq 2) = P(X \leq 1) + P(X = 2) = \frac{1}{10} + 2K = \frac{1}{10} + \frac{2}{10} = \frac{3}{10} = 0.3\)</p>
+                        <p>\(P(X \leq 3) = P(X \leq 2) + P(X = 3) = \frac{3}{10} + 2K = \frac{3}{10} + \frac{2}{10} = \frac{5}{10} = 0.5\)</p>
+                        <p>\(P(X \leq 4) = P(X \leq 3) + P(X = 4) = \frac{5}{10} + 3K = \frac{5}{10} + \frac{3}{10} = \frac{8}{10} = 0.8\)</p>
+                        <p>The smallest value of n for which \(P(X \leq n) > \frac{1}{2}\) is \(n = 4\).</p>
+                        <p><b>e) Find the distribution function of X:</b></p>
+                        <p>\(F(x) = P(X \leq x)\)</p>
+                        <p>\(F(x) = \begin{cases} 0, & x < 0 \\ 0, & 0 \leq x < 1 \\ \frac{1}{10}, & 1 \leq x < 2 \\ \frac{3}{10}, & 2 \leq x < 3 \\ \frac{5}{10}, & 3 \leq x < 4 \\ \frac{8}{10}, & 4 \leq x < 5 \\ \frac{81}{100}, & 5 \leq x < 6 \\ 1, & x \geq 7 \end{cases}\)</p>
+                        <p><b>Answer: a) \(K = 0.1\), b) \(\frac{5}{7}\), c) \(P(X < 6) = 0.81\), \(P(X \geq 6) = 0.19\), \(P(0 < X < 5) = 0.8\), d) \(n = 4\), e) See above.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) i) The number of monthly break-down of a computer is a random variable having a Poisson distribution with mean equal to 1.8. Find the probability that this computer will function for a month
+                        <br>
+                        i) without a break down
+                        <br>
+                        ii) with only one break down
+                        <br>
+                        iii) with at least one break down
+                        <br>
+                        ii) A newly constructed township 2000 electric lamps are installed with average life of 1000 burning hours and standard deviation 200 hours. Assuming that the life of lamp follows normal distribution. Find
+                        <br>
+                        i) Number of lamps expected fails during first 700 hours
+                        <br>
+                        ii) In what period of burning hours 10% of the lamps failed.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>b) i) Poisson Distribution:</b></p>
+                        <p>\(\lambda = 1.8\)</p>
+                        <p>\(P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\)</p>
+                        <p>i) Without a breakdown: \(P(X = 0) = \frac{e^{-1.8} \cdot 1.8^0}{0!} = e^{-1.8} \approx 0.1653\)</p>
+                        <p>ii) With only one breakdown: \(P(X = 1) = \frac{e^{-1.8} \cdot 1.8^1}{1!} = 1.8 \cdot e^{-1.8} \approx 0.2975\)</p>
+                        <p>iii) With at least one breakdown: \(P(X \geq 1) = 1 - P(X = 0) = 1 - e^{-1.8} \approx 1 - 0.1653 = 0.8347\)</p>
+                        <p><b>ii) Normal Distribution:</b></p>
+                        <p>\(\mu = 1000\), \(\sigma = 200\)</p>
+                        <p>i) Number of lamps expected to fail during the first 700 hours:</p>
+                        <p>\(Z = \frac{X - \mu}{\sigma} = \frac{700 - 1000}{200} = \frac{-300}{200} = -1.5\)</p>
+                        <p>\(P(X < 700) = P(Z < -1.5) = \Phi(-1.5) = 1 - \Phi(1.5) \approx 1 - 0.9332 = 0.0668\)</p>
+                        <p>Number of lamps expected to fail = \(2000 \cdot 0.0668 \approx 133.6\)</p>
+                        <p>ii) Period of burning hours in which 10% of the lamps failed:</p>
+                        <p>\(P(X < x) = 0.10\)</p>
+                        <p>\(P(Z < z) = 0.10\)</p>
+                        <p>\(z \approx -1.28\) (from Z-table)</p>
+                        <p>\(z = \frac{x - \mu}{\sigma}\)</p>
+                        <p>\(-1.28 = \frac{x - 1000}{200}\)</p>
+                        <p>\(x = 1000 - 1.28 \cdot 200 = 1000 - 256 = 744\)</p>
+                        <p><b>Answer: i) \(P(X=0) \approx 0.1653\), \(P(X=1) \approx 0.2975\), \(P(X\geq1) \approx 0.8347\), ii) 133.6 lamps, 744 hours</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>a) The joint probability mass function of (X, Y) is given by \(P(x, y) = k(2x + y)\), \(x = 0,1,2\); \(y = 0,1,2\). Find all the marginal and conditional probability distribution.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>a) Finding k:</b></p>
+                        <p>Sum of all probabilities must be 1.</p>
+                        <p>\(\sum_{x=0}^{2} \sum_{y=0}^{2} k(2x + y) = 1\)</p>
+                        <p>\(k \sum_{x=0}^{2} \sum_{y=0}^{2} (2x + y) = 1\)</p>
+                        <p>\(k [(0+0) + (0+1) + (0+2) + (2+0) + (2+1) + (2+2) + (4+0) + (4+1) + (4+2)] = 1\)</p>
+                        <p>\(k [0 + 1 + 2 + 2 + 3 + 4 + 4 + 5 + 6] = 1\)</p>
+                        <p>\(k [27] = 1\)</p>
+                        <p>\(k = \frac{1}{27}\)</p>
+                        <p><b>Marginal Probability Distribution of X:</b></p>
+                        <p>\(P_X(x) = \sum_{y=0}^{2} P(x, y)\)</p>
+                        <p                        <p>\(P_X(0) = P(0,0) + P(0,1) + P(0,2) = \frac{1}{27}(0 + 1 + 2) = \frac{3}{27} = \frac{1}{9}\)</p>
+                        <p>\(P_X(1) = P(1,0) + P(1,1) + P(1,2) = \frac{1}{27}(2 + 3 + 4) = \frac{9}{27} = \frac{1}{3}\)</p>
+                        <p>\(P_X(2) = P(2,0) + P(2,1) + P(2,2) = \frac{1}{27}(4 + 5 + 6) = \frac{15}{27} = \frac{5}{9}\)</p>
+                        <p><b>Marginal Probability Distribution of Y:</b></p>
+                        <p>\(P_Y(y) = \sum_{x=0}^{2} P(x, y)\)</p>
+                        <p>\(P_Y(0) = P(0,0) + P(1,0) + P(2,0) = \frac{1}{27}(0 + 2 + 4) = \frac{6}{27} = \frac{2}{9}\)</p>
+                        <p>\(P_Y(1) = P(0,1) + P(1,1) + P(2,1) = \frac{1}{27}(1 + 3 + 5) = \frac{9}{27} = \frac{1}{3}\)</p>
+                        <p>\(P_Y(2) = P(0,2) + P(1,2) + P(2,2) = \frac{1}{27}(2 + 4 + 6) = \frac{12}{27} = \frac{4}{9}\)</p>
+                        <p><b>Conditional Probability Distribution of X given Y:</b></p>
+                        <p>\(P(X = x \mid Y = y) = \frac{P(x, y)}{P_Y(y)}\)</p>
+                        <p>\(P(X = 0 \mid Y = 0) = \frac{P(0, 0)}{P_Y(0)} = \frac{0}{\frac{2}{9}} = 0\)</p>
+                        <p>\(P(X = 1 \mid Y = 0) = \frac{P(1, 0)}{P_Y(0)} = \frac{\frac{2}{27}}{\frac{2}{9}} = \frac{1}{3}\)</p>
+                        <p>\(P(X = 2 \mid Y = 0) = \frac{P(2, 0)}{P_Y(0)} = \frac{\frac{4}{27}}{\frac{2}{9}} = \frac{2}{3}\)</p>
+                        <p>\(P(X = 0 \mid Y = 1) = \frac{P(0, 1)}{P_Y(1)} = \frac{\frac{1}{27}}{\frac{1}{3}} = \frac{1}{9}\)</p>
+                        <p>\(P(X = 1 \mid Y = 1) = \frac{P(1, 1)}{P_Y(1)} = \frac{\frac{3}{27}}{\frac{1}{3}} = \frac{1}{3}\)</p>
+                        <p>\(P(X = 2 \mid Y = 1) = \frac{P(2, 1)}{P_Y(1)} = \frac{\frac{5}{27}}{\frac{1}{3}} = \frac{5}{9}\)</p>
+                        <p>\(P(X = 0 \mid Y = 2) = \frac{P(0, 2)}{P_Y(2)} = \frac{\frac{2}{27}}{\frac{4}{9}} = \frac{1}{6}\)</p>
+                        <p>\(P(X = 1 \mid Y = 2) = \frac{P(1, 2)}{P_Y(2)} = \frac{\frac{4}{27}}{\frac{4}{9}} = \frac{1}{3}\)</p>
+                        <p>\(P(X = 2 \mid Y = 2) = \frac{P(2, 2)}{P_Y(2)} = \frac{\frac{6}{27}}{\frac{4}{9}} = \frac{1}{2}\)</p>
+                        <p><b>Conditional Probability Distribution of Y given X:</b></p>
+                        <p>\(P(Y = y \mid X = x) = \frac{P(x, y)}{P_X(x)}\)</p>
+                        <p>\(P(Y = 0 \mid X = 0) = \frac{P(0, 0)}{P_X(0)} = \frac{0}{\frac{1}{9}} = 0\)</p>
+                        <p>\(P(Y = 1 \mid X = 0) = \frac{P(0, 1)}{P_X(0)} = \frac{\frac{1}{27}}{\frac{1}{9}} = \frac{1}{3}\)</p>
+                        <p>\(P(Y = 2 \mid X = 0) = \frac{P(0, 2)}{P_X(0)} = \frac{\frac{2}{27}}{\frac{1}{9}} = \frac{2}{3}\)</p>
+                        <p>\(P(Y = 0 \mid X = 1) = \frac{P(1, 0)}{P_X(1)} = \frac{\frac{2}{27}}{\frac{1}{3}} = \frac{2}{9}\)</p>
+                        <p>\(P(Y = 1 \mid X = 1) = \frac{P(1, 1)}{P_X(1)} = \frac{\frac{3}{27}}{\frac{1}{3}} = \frac{1}{3}\)</p>
+                        <p>\(P(Y = 2 \mid X = 1) = \frac{P(1, 2)}{P_X(1)} = \frac{\frac{4}{27}}{\frac{1}{3}} = \frac{4}{9}\)</p>
+                        <p>\(P(Y = 0 \mid X = 2) = \frac{P(2, 0)}{P_X(2)} = \frac{\frac{4}{27}}{\frac{5}{9}} = \frac{4}{15}\)</p>
+                        <p>\(P(Y = 1 \mid X = 2) = \frac{P(2, 1)}{P_X(2)} = \frac{\frac{5}{27}}{\frac{5}{9}} = \frac{1}{3}\)</p>
+                        <p>\(P(Y = 2 \mid X = 2) = \frac{P(2, 2)}{P_X(2)} = \frac{\frac{6}{27}}{\frac{5}{9}} = \frac{2}{5}\)</p>
+                        <p><b>Answer: See above.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) If X and Y are two random variables having joint density function \(f(x,y) = \frac{1}{8}(6 - x - y)\); \(0 < x < 2\), \(2 < y < 4\). Find
+                        <br>
+                        (i) \(P(X < 1 \cap Y < 3)\)
+                        <br>
+                        (ii) \(P(X < 1 \mid Y < 3)\)
+                        <br>
+                        (iii) \(P(X + Y < 3)\).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) \(P(X < 1 \cap Y < 3)\):</b></p>
+                        <p>Since \(0 < x < 2\) and \(2 < y < 4\), the condition \(Y < 3\) implies \(2 < y < 3\).</p>
+                        <p>\(P(X < 1 \cap Y < 3) = \int_{0}^{1} \int_{2}^{3} \frac{1}{8}(6 - x - y) \, dy \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[6y - xy - \frac{1}{2}y^2\right]_{2}^{3} \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[(18 - 3x - \frac{9}{2}) - (12 - 2x - 2)\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[18 - 3x - \frac{9}{2} - 10 + 2x\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[8 - x - \frac{9}{2}\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[\frac{16 - 2x - 9}{2}\right] \, dx\)</p>
+                        <p>\(= \frac{1}{16} \int_{0}^{1} (7 - 2x) \, dx\)</p>
+                        <p>\(= \frac{1}{16} \left[7x - x^2\right]_{0}^{1} = \frac{1}{16} (7 - 1) = \frac{6}{16} = \frac{3}{8}\)</p>
+                        <p><b>(ii) \(P(X < 1 \mid Y < 3)\):</b></p>
+                        <p>\(P(X < 1 \mid Y < 3) = \frac{P(X < 1 \cap Y < 3)}{P(Y < 3)}\)</p>
+                        <p>We already found \(P(X < 1 \cap Y < 3) = \frac{3}{8}\)</p>
+                        <p>Now we need to find \(P(Y < 3)\):</p>
+                        <p>\(P(Y < 3) = \int_{0}^{2} \int_{2}^{3} \frac{1}{8}(6 - x - y) \, dy \, dx\)</p>
+                        <p>\(= \int_{0}^{2} \int_{2}^{3} \frac{1}{8}(6 - x - y) \, dy \, dx = \frac{3}{8}\) (same integral as in part (i))</p>
+                        <p>\(P(X < 1 \mid Y < 3) = \frac{\frac{3}{8}}{\int_{0}^{2} \int_{2}^{3} \frac{1}{8}(6 - x - y) \, dy \, dx} = \frac{\frac{3}{8}}{\frac{1}{8} \int_{0}^{2} \left[6y - xy - \frac{1}{2}y^2\right]_{2}^{3} \, dx}\)</p>
+                        <p>\(= \frac{\frac{3}{8}}{\frac{1}{8} \int_{0}^{2} \left[(18 - 3x - \frac{9}{2}) - (12 - 2x - 2)\right] \, dx} = \frac{\frac{3}{8}}{\frac{1}{8} \int_{0}^{2} \left[\frac{7}{2} - x\right] \, dx}\)</p>
+                        <p>\(= \frac{\frac{3}{8}}{\frac{1}{8} \left[\frac{7}{2}x - \frac{1}{2}x^2\right]_{0}^{2}} = \frac{\frac{3}{8}}{\frac{1}{8} \left[7 - 2\right]} = \frac{\frac{3}{8}}{\frac{5}{8}} = \frac{3}{5}\)</p>
+                        <p><b>(iii) \(P(X + Y < 3)\):</b></p>
+                        <p>Since \(0 < x < 2\) and \(2 < y < 4\), the condition \(X + Y < 3\) implies \(Y < 3 - X\).  However, since \(Y > 2\), we must have \(2 < Y < 3 - X\).  This means \(3 - X > 2\), or \(X < 1\).</p>
+                        <p>\(P(X + Y < 3) = \int_{0}^{1} \int_{2}^{3-x} \frac{1}{8}(6 - x - y) \, dy \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[6y - xy - \frac{1}{2}y^2\right]_{2}^{3-x} \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[6(3-x) - x(3-x) - \frac{1}{2}(3-x)^2 - (12 - 2x - 2)\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[18 - 6x - 3x + x^2 - \frac{1}{2}(9 - 6x + x^2) - 10 + 2x\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[8 - 7x + x^2 - \frac{9}{2} + 3x - \frac{1}{2}x^2\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \int_{0}^{1} \left[\frac{7}{2} - 4x + \frac{1}{2}x^2\right] \, dx\)</p>
+                        <p>\(= \frac{1}{8} \left[\frac{7}{2}x - 2x^2 + \frac{1}{6}x^3\right]_{0}^{1} = \frac{1}{8} \left[\frac{7}{2} - 2 + \frac{1}{6}\right] = \frac{1}{8} \left[\frac{21 - 12 + 1}{6}\right] = \frac{1}{8} \cdot \frac{10}{6} = \frac{5}{24}\)</p>
+                        <p><b>Answer: (i) \(\frac{3}{8}\), (ii) \(\frac{3}{5}\), (iii) \(\frac{5}{24}\)</b></p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section id="test2">
+            <h2>Continuous Assessment Test - II (24-04-2025)</h2>
+
+            <section id="partA2">
+                <h3>Part A (5 Marks)</h3>
                 <ol>
-                    <li>\(S_{XX}(\omega) \ge 0\) (Non-negativity).</li>
-                    <li>For real WSS process, \(S_{XX}(\omega) = S_{XX}(-\omega)\) (Even function).</li>
-                    <li>\(R_{XX}(0) = \frac{1}{2\pi} \int_{-\infty}^{\infty} S_{XX}(\omega) d\omega\) (Total average power).</li>
+                    <li>If \(f_{XY}(x, y)\) is the joint pdf of (X, Y), the marginal pdf of X is obtained by: <b>a) Integrating \(f_{XY}(x, y)\) over y</b></li>
+                    <li>If \(X_1, X_2, X_3, ..., X_n, ...\) be a sequence of independent identically distributed random variables with \(E(X_i) = \mu\) and \(Var(X_i) = \sigma^2\), \(i = 1,2,...\) and if \(\bar{X} = \frac{X_1+X_2+...+X_n}{n}\), then \(\bar{X}\) as \(n \rightarrow \infty\) follows <b>(d) normal distribution with \(E(\bar{X}) = \mu\) and \(Var(\bar{X}) = \frac{\sigma^2}{n}\)</b></li>
+                    <li>The auto-correlation function \(R_{XX}(\tau)\) for a random process {X(t)} is defined as: <b>(b) \(R_{XX}(\tau) = E[X(t)X(t + \tau)]\)</b></li>
+                    <li>Two random processes X(t) and Y(t) are said to be orthogonal if <b>(a) Cross correlation \(R_{XY}(\tau) = 0\)</b></li>
+                    <li>Let X(t) is a random process which is wide sense stationary then <b>(c) \(E[X(t)] = \text{constant}\) and \(E[X(t)X(t + \tau)] = R_{XX}(\tau)\)</b></li>
                 </ol>
-            </div>
-        </div>
+            </section>
 
-        <h3 class="part-title">PART - C (3 × 11 = 33 Marks)</h3>
-        <div class="question">
-            <strong>12. a) Two random variables X and Y have joint density function \(f(x,y) = 2-x-y, 0 \le x \le 1, 0 \le y \le 1\). Find Cov(X,Y) and the correlation coefficient.</strong>
-            <div class="solution">
-                <p>\(E[X] = E[Y] = 5/12\). \(E[X^2] = E[Y^2] = 1/4\).</p>
-                <p>\(\sigma_X^2 = \sigma_Y^2 = 11/144\).</p>
-                <p>\(E[XY] = 1/6\).</p>
-                <p>\(Cov(X,Y) = E[XY] - E[X]E[Y] = 1/6 - (5/12)^2 = -1/144\).</p>
-                <p>\(\rho_{XY} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{-1/144}{11/144} = -1/11\).</p>
-                <p class="answer">Answer: \(Cov(X,Y) = -1/144\), \(\rho_{XY} = -1/11\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>12. b) (Or) (i) Regression lines: \(8x - 10y + 66 = 0\), \(40x - 18y - 214 = 0\). \(Var(X)=9\). Find means, correlation coeff, std dev of Y.</strong>
-            <div class="solution">
-                <p>i) Solving equations: \(\bar{x}=13, \bar{y}=17\).</p>
-                <p>ii) \(y = 0.8x + 6.6 \implies b_{yx}=0.8\). \(x = 0.45y + 5.35 \implies b_{xy}=0.45\).</p>
-                <p>\(r = \sqrt{b_{yx}b_{xy}} = \sqrt{0.8 \times 0.45} = \sqrt{0.36} = 0.6\).</p>
-                <p>iii) \(\sigma_x = 3\). \(b_{yx} = r \frac{\sigma_y}{\sigma_x} \implies 0.8 = 0.6 \frac{\sigma_y}{3} \implies \sigma_y = 4\).</p>
-                <p class="answer">Answers: i) \(\bar{x}=13, \bar{y}=17\). ii) \(r=0.6\). iii) \(\sigma_y=4\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>12. b) (Or) (ii) \(X_i \sim Poisson(\lambda=2)\), \(n=75\). Estimate \(P(120 \le S_n \le 160)\) using CLT.</strong>
-            <div class="solution">
-                <p>\(E[X_i]=2, Var(X_i)=2\). \(E[S_n]=75 \times 2 = 150\). \(Var(S_n)=75 \times 2 = 150\). \(\sigma_{S_n} = \sqrt{150} \approx 12.247\).</p>
-                <p>Using continuity correction: \(P(119.5 \le S_n \le 160.5)\).</p>
-                <p>\(P(\frac{119.5-150}{\sqrt{150}} \le Z \le \frac{160.5-150}{\sqrt{150}}) = P(-2.49 \le Z \le 0.86)\)</p>
-                <p>\(= \Phi(0.86) - \Phi(-2.49) = 0.8051 - (1-0.9936) = 0.8051 - 0.0064 = 0.7987\).</p>
-                <p class="answer">Answer: \(\approx 0.7987\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>13. a) Show that \(X(t) = A \sin(\omega t + \theta)\) is WSS if A, \(\omega\) are constants and \(\theta \sim U(0, 2\pi)\).</strong>
-            <div class="solution">
-                <p>1. \(E[X(t)] = A E[\sin(\omega t + \theta)] = A \int_0^{2\pi} \sin(\omega t + \theta) \frac{1}{2\pi} d\theta = \frac{A}{2\pi} [-\cos(\omega t + \theta)]_0^{2\pi} = 0\) (constant).</p>
-                <p>2. \(R_{XX}(t_1, t_2) = E[A^2 \sin(\omega t_1 + \theta)\sin(\omega t_2 + \theta)]\)</p>
-                <p>\(= \frac{A^2}{2} E[\cos(\omega(t_1-t_2)) - \cos(\omega(t_1+t_2)+2\theta)]\).</p>
-                <p>\(E[\cos(\omega(t_1+t_2)+2\theta)] = \int_0^{2\pi} \cos(\omega(t_1+t_2)+2\theta) \frac{1}{2\pi} d\theta = 0\).</p>
-                <p>\(R_{XX}(t_1, t_2) = \frac{A^2}{2} \cos(\omega(t_1-t_2))\). Depends only on \(\tau = t_1-t_2\).</p>
-                <p class="answer">Answer: The process is WSS.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>13. b) (Or) Process \(X(t)\) with PMF \(P\{X(t)=n\} = \begin{cases} \frac{(at)^{n-1}}{(1+at)^{n+1}}, & n=1,2,\dots \\ \frac{at}{1+at}, & n=0 \end{cases}\). Find mean, variance. Is it first-order stationary?</strong>
-            <div class="solution">
-                <p>Mean \(E[X(t)] = 1\).</p>
-                <p>Variance \(Var(X(t)) = E[X(t)^2] - (E[X(t)])^2\). \(E[X(t)^2] = (1+2at)(1+at)\).</p>
-                <p>\(Var(X(t)) = (1+3at+2(at)^2) - 1 = 3at + 2(at)^2\).</p>
-                <p>Not first-order stationary if \(a \neq 0\) because PMF depends on \(t\).</p>
-                <p class="answer">Answers: Mean=1. Variance=\(3at+2(at)^2\). Not first-order stationary (if \(a \neq 0\)).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. a) \(X(t) = A \cos(\omega t + \theta)\), \(Y(t) = A \sin(\omega t + \theta)\). Find Cross-Correlation coefficient function.</strong>
-            <div class="solution">
-                <p>\(R_{XY}(t_1, t_2) = E[A^2 \cos(\omega t_1 + \theta)\sin(\omega t_2 + \theta)]\)</p>
-                <p>\(= \frac{A^2}{2} E[\sin(\omega(t_1+t_2)+2\theta) - \sin(\omega(t_1-t_2))]\).</p>
-                <p>\(E[\sin(\omega(t_1+t_2)+2\theta)] = 0\).</p>
-                <p>\(R_{XY}(t_1, t_2) = -\frac{A^2}{2} \sin(\omega(t_1-t_2))\). Let \(\tau = t_1-t_2\), \(R_{XY}(\tau) = -\frac{A^2}{2}\sin(\omega\tau)\).</p>
-                <p>\(R_{XX}(0) = A^2/2\), \(R_{YY}(0) = A^2/2\).</p>
-                <p>\(\rho_{XY}(\tau) = \frac{R_{XY}(\tau)}{\sqrt{R_{XX}(0)R_{YY}(0)}} = \frac{-\frac{A^2}{2}\sin(\omega\tau)}{A^2/2} = -\sin(\omega\tau)\).</p>
-                <p class="answer">Answer: \(\rho_{XY}(\tau) = -\sin(\omega\tau)\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. b) (Or) PSD \(S(\omega) = \begin{cases} \frac{b}{a}(a-|\omega|), & |\omega| \le a \\ 0, & |\omega| > a \end{cases}\). Find autocorrelation.</strong>
-            <div class="solution">
-                <p>\(R(\tau) = \frac{1}{2\pi} \int_{-a}^{a} \frac{b}{a}(a-|\omega|) e^{j\omega\tau} d\omega = \frac{b}{\pi a} \int_0^a (a-\omega)\cos(\omega\tau) d\omega\).</p>
-                <p>Integrating by parts: \(R(\tau) = \frac{b}{\pi a} \left[ \frac{1-\cos(a\tau)}{\tau^2} \right] = \frac{ba}{2\pi} \left( \frac{\sin(a\tau/2)}{a\tau/2} \right)^2\).</p>
-                <p class="answer">Answer: \(R(\tau) = \frac{ba}{2\pi} \text{sinc}^2(a\tau/2)\).</p>
-            </div>
-        </div>
-    </div>
+            <section id="partB2">
+                <h3>Part B (12 Marks)</h3>
 
-    <!-- CONTINUOUS ASSESSMENT TEST - III -->
-    <div class="question-set">
-        <h2 class="test-title">CONTINUOUS ASSESSMENT TEST - III (Question Paper Code: 25AU43F183)</h2>
+                <article class="question">
+                    <h4>Write the properties of Correlation Coefficient.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>1. The correlation coefficient, denoted by ρ (rho) or r, is a dimensionless number that ranges from -1 to +1.</p>
+                        <p>2. The correlation coefficient measures the strength and direction of a linear relationship between two variables.</p>
+                        <p>3. A correlation coefficient of +1 indicates a perfect positive linear relationship, -1 indicates a perfect negative linear relationship, and 0 indicates no linear relationship.</p>
+                        <p>4. The correlation coefficient is symmetric, meaning that the correlation between X and Y is the same as the correlation between Y and X.</p>
+                        <p>5. The correlation coefficient is not affected by changes in scale or origin of the variables.</p>
+                    </div>
+                </article>
 
-        <h3 class="part-title">PART - B (6 × 2 = 12 Marks)</h3>
-        <div class="question">
-            <strong>6. Define Markov process.</strong>
-            <div class="solution">
-                <p>A Markov process is a stochastic process where the future state depends only on the present state, not on past states (memoryless property).</p>
-                <p>\(P(X(t_n) \le x_n | X(t_{n-1})=x_{n-1}, \dots, X(t_1)=x_1) = P(X(t_n) \le x_n | X(t_{n-1})=x_{n-1})\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>7. Let \(A = \begin{pmatrix} 0 & 1 \\ 1/2 & 1/2 \end{pmatrix}\) be a stochastic matrix. Check whether it is regular.</strong>
-            <div class="solution">
-                <p>\(A^2 = \begin{pmatrix} 0 & 1 \\ 1/2 & 1/2 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1/2 & 1/2 \end{pmatrix} = \begin{pmatrix} 1/2 & 1/2 \\ 1/4 & 3/4 \end{pmatrix}\). All entries are positive.</p>
-                <p class="answer">Answer: A is regular.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>8. State any two properties of a Poisson process.</strong>
-            <div class="solution">
+                <article class="question">
+                    <h4>State Central Limit Theorem for independent identically distributed random variables.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The Central Limit Theorem (CLT) states that the distribution of the sum (or average) of a large number of independent, identically distributed (i.i.d.) random variables will be approximately normal, regardless of the original distribution of the variables.</p>
+                        <p>Formally, let \(X_1, X_2, ..., X_n\) be a sequence of i.i.d. random variables with mean \(\mu\) and variance \(\sigma^2\). Let \(S_n = X_1 + X_2 + ... + X_n\). Then, as n approaches infinity, the distribution of \(\frac{S_n - n\mu}{\sigma\sqrt{n}}\) converges to a standard normal distribution (mean 0, variance 1).</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Define a strictly stationary random process.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>A random process {X(t)} is said to be strictly stationary (or strongly stationary) if its statistical properties are invariant to shifts in time. This means that the joint distribution of any set of random variables X(t₁), X(t₂), ..., Xₙ) is the same as the joint distribution of X(t₁+τ), X(t₂+τ), ..., X(tₙ+τ) for any time shift τ.</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Define Cross Correlation.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The cross-correlation function between two random processes X(t) and Y(t) measures the similarity between the two processes as a function of the time lag between them. It is defined as \(R_{XY}(\tau) = E[X(t)Y(t+\tau)]\), where E[] denotes the expected value and τ is the time lag.</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Find the variance of the stationary process {X(t)} whose auto correlation function is given by \(R_{XX}(\tau) = 2 + 4e^{-2|\tau|}\).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>For a stationary process, the variance is given by \(Var[X(t)] = R_{XX}(0) - (E[X(t)])^2\).</p>
+                        <p>First, we need to find \(R_{XX}(0)\): \(R_{XX}(0) = 2 + 4e^{-2|0|} = 2 + 4e^0 = 2 + 4 = 6\).</p>
+                        <p>Next, we need to find \((E[X(t)])^2\). Since \(R_{XX}(\tau) = E[X(t)X(t+\tau)]\), as τ approaches infinity, \(R_{XX}(\tau)\) approaches \((E[X(t)])^2\).</p>
+                        <p>As τ approaches infinity, \(e^{-2|\tau|}\) approaches 0. Therefore, \((E[X(t)])^2 = 2\).</p>
+                        <p>\(Var[X(t)] = R_{XX}(0) - (E[X(t)])^2 = 6 - 2 = 4\).</p>
+                        <p><b>Answer: 4</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>State any two properties of the power spectral density function.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>1. The power spectral density (PSD) function, \(S_{XX}(\omega)\), is a real and non-negative function of frequency ω.</p>
+                        <p>2. The PSD is an even function, meaning that \(S_{XX}(\omega) = S_{XX}(-\omega)\). This property is a consequence of the autocorrelation function being an even function.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="partC2">
+                <h3>Part C (33 Marks)</h3>
+
+                <article class="question">
+                    <h4>a) Two random variables X and Y have joint density function of X and Y is
+                        \(f(x,y) = \begin{cases} 2 - x - y, & 0 \leq x \leq 1, 0 \leq y \leq 1 \\ 0, & \text{otherwise} \end{cases}\)
+                        Find Cov (X, Y) and the correlation coefficient between X and Y.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>First, we need to find the marginal densities \(f_X(x)\) and \(f_Y(y)\).</p>
+                        <p>\(f_X(x) = \int_{0}^{1} (2 - x - y) \, dy = [2y - xy - \frac{1}{2}y^2]_{0}^{1} = 2 - x - \frac{1}{2} = \frac{3}{2} - x\), for \(0 \leq x \leq 1\)</p>
+                        <p>\(f_Y(y) = \int_{0}^{1} (2 - x - y) \, dx = [2x - \frac{1}{2}x^2 - yx]_{0}^{1} = 2 - \frac{1}{2} - y = \frac{3}{2} - y\), for \(0 \leq y \leq 1\)</p>
+                        <p>Next, we find the expected values \(E[X]\) and \(E[Y]\).</p>
+                        <p>\(E[X] = \int_{0}^{1} x f_X(x) \, dx = \int_{0}^{1} x(\frac{3}{2} - x) \, dx = \int_{0}^{1} (\frac{3}{2}x - x^2) \, dx = [\frac{3}{4}x^2 - \frac{1}{3}x^3]_{0}^{1} = \frac{3}{4} - \frac{1}{3} = \frac{9 - 4}{12} = \frac{5}{12}\)</p>
+                        <p>\(E[Y] = \int_{0}^{1} y f_Y(y) \, dy = \int_{0}^{1} y(\frac{3}{2} - y) \, dy = \int_{0}^{1} (\frac{3}{2}y - y^2) \, dy = [\frac{3}{4}y^2 - \frac{1}{3}y^3]_{0}^{1} = \frac{3}{4} - \frac{1}{3} = \frac{9 - 4}{12} = \frac{5}{12}\)</p>
+                        <p>Now, we find \(E[XY]\).</p>
+                        <p>\(E[XY] = \int_{0}^{1} \int_{0}^{1} xy(2 - x - y) \, dy \, dx = \int_{0}^{1} \int_{0}^{1} (2xy - x^2y - xy^2) \, dy \, dx\)</p>
+                        <p>\(= \int_{0}^{1} [xy^2 - \frac{1}{2}x^2y^2 - \frac{1}{3}xy^3]_{0}^{1} \, dx = \int_{0}^{1} (x - \frac{1}{2}x^2 - \frac{1}{3}x) \, dx = \int_{0}^{1} (\frac{2}{3}x - \frac{1}{2}x^2) \, dx\)</p>
+                        <p>\(= [\frac{1}{3}x^2 - \frac{1}{6}x^3]_{0}^{1} = \frac{1}{3} - \frac{1}{6} = \frac{2 - 1}{6} = \frac{1}{6}\)</p>
+                        <p>The covariance is given by \(Cov(X, Y) = E[XY] - E[X]E[Y] = \frac{1}{6} - \frac{5}{12} \cdot \frac{5}{12} = \frac{1}{6} - \frac{25}{144} = \frac{24 - 25}{144} = -\frac{1}{144}\)</p>
+                        <p>Next, we find the variances \(Var(X)\) and \(Var(Y)\).</p>
+                        <p>\(E[X^2] = \int_{0}^{1} x^2 f_X(x) \, dx = \int_{0}^{1} x^2(\frac{3}{2} - x) \, dx = \int_{0}^{1} (\frac{3}{2}x^2 - x^3) \, dx = [\frac{1}{2}x^3 - \frac{1}{4}x^4]_{0}^{1} = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}\)</p>
+                        <p>\(Var(X) = E[X^2] - (E[X])^2 = \frac{1}{4} - (\frac{5}{12})^2 = \frac{1}{4} - \frac{25}{144} = \frac{36 - 25}{144} = \frac{11}{144}\)</p>
+                        <p>Since \(f_X(x) = f_Y(y)\), \(Var(Y) = Var(X) = \frac{11}{144}\)</p>
+                        <p>The correlation coefficient is given by \(\rho = \frac{Cov(X, Y)}{\sqrt{Var(X)Var(Y)}} = \frac{-\frac{1}{144}}{\sqrt{\frac{11}{144} \cdot \frac{11}{144}}} = \frac{-\frac{1}{144}}{\frac{11}{144}} = -\frac{1}{11}\)</p>
+                        <p><b>Answer: \(Cov(X, Y) = -\frac{1}{144}\), \(\rho = -\frac{1}{11}\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) (i) The two lines of regression are 8x - 10y + 66 = 0, 40x - 18y - 214 = 0. The variance of X is 9. Find (i) mean values of X and Y. (ii) Correlation Coefficient of X and Y. (iii) standard deviation of Y.
+                        <br>
+                        (ii) If \(X_1, X_2, ...\) are Poisson variates with parameter \(\lambda = 2\), use the central limit theorem to estimate \(P(120 \leq S_n \leq 160)\), where \(S_n = X_1 + X_2 + ... + X_n\) and \(n = 75\).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) Mean values of X and Y:</b></p>
+                        <p>To find the mean values, we solve the system of equations:</p>
+                        <p>\(8x - 10y + 66 = 0\)</p>
+                        <p>\(40x - 18y - 214 = 0\)</p>
+                        <p>Multiply the first equation by 5: \(40x - 50y + 330 = 0\)</p>
+                        <p>Subtract the second equation from the modified first equation: \(-32y + 544 = 0\)</p>
+                        <p>\(32y = 544\)</p>
+                        <p>\(y = \frac{544}{32} = 17\)</p>
+                        <p>Substitute y = 17 into the first equation: \(8x - 10(17) + 66 = 0\)</p>
+                        <p>\(8x - 170 + 66 = 0\)</p>
+                        <p>\(8x = 104\)</p>
+                        <p>\(x = \frac{104}{8} = 13\)</p>
+                        <p>So, \(E[X] = 13\) and \(E[Y] = 17\)</p>
+                        <p><b>(ii) Correlation Coefficient of X and Y:</b></p>
+                        <p>Rewrite the regression lines in the form \(y = b_{yx}x + c_1\) and \(x = b_{xy}y + c_2\)</p>
+                        <p>\(10y = 8x + 66 \Rightarrow y = \frac{4}{5}x + \frac{33}{5}\), so \(b_{yx} = \frac{4}{5}\)</p>
+                        <p>\(40x = 18y + 214 \Rightarrow x = \frac{9}{20}y + \frac{107}{20}\), so \(b_{xy} = \frac{9}{20}\)</p>
+                        <p>The correlation coefficient is given by \(r = \pm \sqrt{b_{yx}b_{xy}} = \pm \sqrt{\frac{4}{5} \cdot \frac{9}{20}} = \pm \sqrt{\frac{36}{100}} = \pm \frac{6}{10} = \pm \frac{3}{5}\)</p>
+                        <p>Since both regression coefficients are positive, the correlation coefficient is positive: \(r = \frac{3}{5}\)</p>
+                        <p><b>(iii) Standard deviation of Y:</b></p>
+                        <p>We know that \(Var(X) = 9\), so \(\sigma_X = \sqrt{9} = 3\)</p>
+                        <p>We also know that \(b_{yx} = r \frac{\sigma_Y}{\sigma_X}\), so \(\frac{4}{5} = \frac{3}{5} \cdot \frac{\sigma_Y}{3}\)</p>
+                        <p>\(\frac{4}{5} = \frac{\sigma_Y}{5}\)</p>
+                        <p>\(\sigma_Y = 4\)</p>
+                        <p><b>(ii) Central Limit Theorem for Poisson variates:</b></p>
+                        <p>Given \(X_i\) are Poisson variates with \(\lambda = 2\), then \(E[X_i] = \lambda = 2\) and \(Var(X_i) = \lambda = 2\)</p>
+                        <p>\(S_n = X_1 + X_2 + ... + X_n\), where \(n = 75\)</p>
+                        <p>\(E[S_n] = nE[X_i] = 75 \cdot 2 = 150\)</p>
+                        <p>\(Var(S_n) = nVar(X_i) = 75 \cdot 2 = 150\)</p>
+                        <p>\(\sigma_{S_n} = \sqrt{Var(S_n)} = \sqrt{150} \approx 12.247\)</p>
+                        <p>By the Central Limit Theorem, \(S_n\) is approximately normally distributed with mean 150 and standard deviation \(\sqrt{150}\)</p>
+                        <p>\(P(120 \leq S_n \leq 160) = P(\frac{120 - 150}{\sqrt{150}} \leq Z \leq \frac{160 - 150}{\sqrt{150}})\)</p>
+                        <p>\(= P(\frac{-30}{\sqrt{150}} \leq Z \leq \frac{10}{\sqrt{150}}) = P(-2.449 \leq Z \leq 0.816)\)</p>                        <p>\(= \Phi(0.816) - \Phi(-2.449) = \Phi(0.816) - (1 - \Phi(2.449))\)</p>
+                        <p>\(\approx 0.7926 - (1 - 0.9928) = 0.7926 - 0.0072 = 0.7854\)</p>
+                        <p><b>Answer: (i) \(E[X] = 13\), \(E[Y] = 17\), (ii) \(r = \frac{3}{5}\), (iii) \(\sigma_Y = 4\), (ii) \(P(120 \leq S_n \leq 160) \approx 0.7854\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>a) Show that the random process {X(t)} = A sin(ωt + θ) is a wide sense stationary if A and ω are constants and θ is uniformly distributed random variable in (0,2π).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>To show that \(X(t) = A \sin(\omega t + \theta)\) is wide-sense stationary (WSS), we need to show that:</p>
+                        <p>1. \(E[X(t)]\) is constant (independent of t)</p>
+                        <p>2. \(R_{XX}(t_1, t_2) = E[X(t_1)X(t_2)]\) depends only on \(t_2 - t_1 = \tau\)</p>
+                        <p>1. \(E[X(t)] = E[A \sin(\omega t + \theta)] = A E[\sin(\omega t + \theta)]\)</p>
+                        <p>\(= A \int_{0}^{2\pi} \sin(\omega t + \theta) f_{\Theta}(\theta) \, d\theta\), where \(f_{\Theta}(\theta) = \frac{1}{2\pi}\) for \(0 < \theta < 2\pi\)</p>
+                        <p>\(= \frac{A}{2\pi} \int_{0}^{2\pi} \sin(\omega t + \theta) \, d\theta = \frac{A}{2\pi} [-\cos(\omega t + \theta)]_{0}^{2\pi}\)</p>
+                        <p>\(= \frac{A}{2\pi} [-\cos(\omega t + 2\pi) + \cos(\omega t)] = \frac{A}{2\pi} [-\cos(\omega t) + \cos(\omega t)] = 0\)</p>
+                        <p>So, \(E[X(t)] = 0\), which is constant.</p>
+                        <p>2. \(R_{XX}(t_1, t_2) = E[X(t_1)X(t_2)] = E[A \sin(\omega t_1 + \theta) A \sin(\omega t_2 + \theta)]\)</p>
+                        <p>\(= A^2 E[\sin(\omega t_1 + \theta) \sin(\omega t_2 + \theta)]\)</p>
+                        <p>\(= A^2 \int_{0}^{2\pi} \sin(\omega t_1 + \theta) \sin(\omega t_2 + \theta) \frac{1}{2\pi} \, d\theta\)</p>
+                        <p>Using the trigonometric identity \(\sin(a)\sin(b) = \frac{1}{2}[\cos(a - b) - \cos(a + b)]\):</p>
+                        <p>\(R_{XX}(t_1, t_2) = \frac{A^2}{2\pi} \int_{0}^{2\pi} \frac{1}{2}[\cos(\omega t_1 - \omega t_2) - \cos(\omega t_1 + \omega t_2 + 2\theta)] \, d\theta\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \int_{0}^{2\pi} [\cos(\omega(t_1 - t_2)) - \cos(\omega(t_1 + t_2) + 2\theta)] \, d\theta\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[\theta \cos(\omega(t_1 - t_2)) - \frac{1}{2}\sin(\omega(t_1 + t_2) + 2\theta)\right]_{0}^{2\pi}\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[2\pi \cos(\omega(t_1 - t_2)) - \frac{1}{2}\sin(\omega(t_1 + t_2) + 4\pi) + \frac{1}{2}\sin(\omega(t_1 + t_2))\right]\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[2\pi \cos(\omega(t_1 - t_2)) - \frac{1}{2}\sin(\omega(t_1 + t_2)) + \frac{1}{2}\sin(\omega(t_1 + t_2))\right]\)</p>
+                        <p>\(= \frac{A^2}{2} \cos(\omega(t_1 - t_2))\)</p>
+                        <p>Since \(R_{XX}(t_1, t_2) = \frac{A^2}{2} \cos(\omega(t_1 - t_2))\) depends only on \(t_1 - t_2\), the process is WSS.</p>
+                        <p><b>Answer: The process is WSS.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) The process {X(t)} whose probability distribution under certain condition is given by
+                        \(P\{X(t) = n\} = \begin{cases} \frac{(at)^{n-1}}{(1+at)^{n+1}}, & n = 1,2 ... \\ \frac{at}{1+at}, & n = 0 \end{cases}\)
+                        Find the mean and variance of the process. Is the process first-order stationary?</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>To find the mean and variance, we need to calculate \(E[X(t)]\) and \(E[X(t)^2]\).</p>
+                        <p>\(E[X(t)] = \sum_{n=0}^{\infty} n P\{X(t) = n\} = 0 \cdot \frac{at}{1+at} + \sum_{n=1}^{\infty} n \frac{(at)^{n-1}}{(1+at)^{n+1}}\)</p>
+                        <p>\(= \sum_{n=1}^{\infty} n \frac{(at)^{n-1}}{(1+at)^{n+1}} = \frac{1}{(1+at)^2} \sum_{n=1}^{\infty} n \left(\frac{at}{1+at}\right)^{n-1}\)</p>
+                        <p>Let \(x = \frac{at}{1+at}\). Then, we have \(\sum_{n=1}^{\infty} nx^{n-1}\). We know that \(\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}\) for \(|x| < 1\). Differentiating with respect to x, we get \(\sum_{n=1}^{\infty} nx^{n-1} = \frac{1}{(1-x)^2}\)</p>
+                        <p>So, \(E[X(t)] = \frac{1}{(1+at)^2} \cdot \frac{1}{(1 - \frac{at}{1+at})^2} = \frac{1}{(1+at)^2} \cdot \frac{1}{(\frac{1+at-at}{1+at})^2} = \frac{1}{(1+at)^2} \cdot (1+at)^2 = 1\)</p>
+                        <p>Now, we find \(E[X(t)^2] = \sum_{n=0}^{\infty} n^2 P\{X(t) = n\} = \sum_{n=1}^{\infty} n^2 \frac{(at)^{n-1}}{(1+at)^{n+1}}\)</p>
+                        <p>\(= \frac{1}{(1+at)^2} \sum_{n=1}^{\infty} n^2 \left(\frac{at}{1+at}\right)^{n-1}\)</p>
+                        <p>We know that \(\sum_{n=1}^{\infty} n^2 x^{n-1} = \frac{1+x}{(1-x)^3}\). Therefore,</p>
+                        <p>\(E[X(t)^2] = \frac{1}{(1+at)^2} \cdot \frac{1 + \frac{at}{1+at}}{(1 - \frac{at}{1+at})^3} = \frac{1}{(1+at)^2} \cdot \frac{\frac{1+2at}{1+at}}{\frac{1}{(1+at)^3}} = \frac{1+2at}{1+at}\)</p>
+                        <p>\(Var[X(t)] = E[X(t)^2] - (E[X(t)])^2 = \frac{1+2at}{1+at} - 1 = \frac{1+2at - (1+at)}{1+at} = \frac{at}{1+at}\)</p>
+                        <p>Since \(E[X(t)] = 1\) (constant) and \(Var[X(t)] = \frac{at}{1+at}\) depends on t, the process is not first-order stationary.</p>
+                        <p><b>Answer: \(E[X(t)] = 1\), \(Var[X(t)] = \frac{at}{1+at}\), Not first-order stationary.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>a) Two random process {X(t)}, {Y(t)} are given by X(t) = A cos(ωt + θ) and Y(t) = A sin(ωt + θ) where A and ω are constants and θ is a uniform random variable over 0 to 2π. Find the Cross-Correlation coefficient function.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The cross-correlation function is given by \(R_{XY}(t_1, t_2) = E[X(t_1)Y(t_2)]\)</p>
+                        <p>\(R_{XY}(t_1, t_2) = E[A \cos(\omega t_1 + \theta) A \sin(\omega t_2 + \theta)] = A^2 E[\cos(\omega t_1 + \theta) \sin(\omega t_2 + \theta)]\)</p>
+                        <p>\(= A^2 \int_{0}^{2\pi} \cos(\omega t_1 + \theta) \sin(\omega t_2 + \theta) \frac{1}{2\pi} \, d\theta\)</p>
+                        <p>Using the trigonometric identity \(\cos(a)\sin(b) = \frac{1}{2}[\sin(a + b) - \sin(a - b)]\):</p>
+                        <p>\(R_{XY}(t_1, t_2) = \frac{A^2}{2\pi} \int_{0}^{2\pi} \frac{1}{2}[\sin(\omega t_1 + \omega t_2 + 2\theta) - \sin(\omega t_2 - \omega t_1)] \, d\theta\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \int_{0}^{2\pi} [\sin(\omega(t_1 + t_2) + 2\theta) - \sin(\omega(t_2 - t_1))] \, d\theta\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[-\frac{1}{2}\cos(\omega(t_1 + t_2) + 2\theta) - \theta \sin(\omega(t_2 - t_1))\right]_{0}^{2\pi}\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[-\frac{1}{2}\cos(\omega(t_1 + t_2) + 4\pi) + \frac{1}{2}\cos(\omega(t_1 + t_2)) - 2\pi \sin(\omega(t_2 - t_1))\right]\)</p>
+                        <p>\(= \frac{A^2}{4\pi} \left[-\frac{1}{2}\cos(\omega(t_1 + t_2)) + \frac{1}{2}\cos(\omega(t_1 + t_2)) - 2\pi \sin(\omega(t_2 - t_1))\right]\)</p>
+                        <p>\(= \frac{A^2}{4\pi} [-2\pi \sin(\omega(t_2 - t_1))] = -\frac{A^2}{2} \sin(\omega(t_2 - t_1))\)</p>
+                        <p>The cross-correlation coefficient function is \(-\frac{A^2}{2} \sin(\omega(t_2 - t_1))\)</p>
+                        <p><b>Answer: \(R_{XY}(\tau) = -\frac{A^2}{2} \sin(\omega \tau)\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) If the power spectral density of WSS process X(t) is given by
+                        \(S(\omega) = \begin{cases} \frac{b}{a}(a - |\omega|), & |\omega| \leq a \\ 0, & \text{elsewhere} \end{cases}\)
+                        Find the autocorrelation function of the process.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The autocorrelation function \(R_{XX}(\tau)\) is the inverse Fourier transform of the power spectral density \(S(\omega)\):</p>
+                        <p>\(R_{XX}(\tau) = \frac{1}{2\pi} \int_{-\infty}^{\infty} S(\omega) e^{j\omega\tau} \, d\omega\)</p>
+                        <p>Given \(S(\omega) = \begin{cases} \frac{b}{a}(a - |\omega|), & |\omega| \leq a \\ 0, & \text{elsewhere} \end{cases}\)</p>
+                        <p>\(R_{XX}(\tau) = \frac{1}{2\pi} \int_{-a}^{a} \frac{b}{a}(a - |\omega|) e^{j\omega\tau} \, d\omega\)</p>
+                        <p>\(= \frac{b}{2\pi a} \int_{-a}^{a} (a - |\omega|) e^{j\omega\tau} \, d\omega = \frac{b}{2\pi a} \left[\int_{-a}^{0} (a + \omega) e^{j\omega\tau} \, d\omega + \int_{0}^{a} (a - \omega) e^{j\omega\tau} \, d\omega\right]\)</p>
+                        <p>Since \(S(\omega)\) is an even function, \(R_{XX}(\tau)\) is real and even. Therefore, we can write:</p>
+                        <p>\(R_{XX}(\tau) = \frac{b}{\pi a} \int_{0}^{a} (a - \omega) \cos(\omega\tau) \, d\omega\)</p>
+                        <p>\(= \frac{b}{\pi a} \left[a \int_{0}^{a} \cos(\omega\tau) \, d\omega - \int_{0}^{a} \omega \cos(\omega\tau) \, d\omega\right]\)</p>
+                        <p>\(= \frac{b}{\pi a} \left[a \left[\frac{\sin(\omega\tau)}{\tau}\right]_{0}^{a} - \left[\frac{\omega \sin(\omega\tau)}{\tau} + \frac{\cos(\omega\tau)}{\tau^2}\right]_{0}^{a}\right]\)</p>
+                        <p>\(= \frac{b}{\pi a} \left[a \frac{\sin(a\tau)}{\tau} - \frac{a \sin(a\tau)}{\tau} - \frac{\cos(a\tau)}{\tau^2} + \frac{1}{\tau^2}\right]\)</p>
+                        <p>\(= \frac{b}{\pi a \tau^2} [1 - \cos(a\tau)] = \frac{b}{\pi a \tau^2} [2 \sin^2(\frac{a\tau}{2})]\)</p>
+                        <p>\(= \frac{2b}{\pi a \tau^2} \sin^2(\frac{a\tau}{2})\)</p>
+                        <p><b>Answer: \(R_{XX}(\tau) = \frac{2b}{\pi a \tau^2} \sin^2(\frac{a\tau}{2})\)</b></p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section id="test3">
+            <h2>Continuous Assessment Test - III (14-05-2025)</h2>
+
+            <section id="partA3">
+                <h3>Part A (5 Marks)</h3>
                 <ol>
-                    <li>\(N(0)=0\).</li>
-                    <li>Independent increments.</li>
-                    <li>Number of events in interval \(\tau\) is Poisson with mean \(\lambda\tau\).</li>
-                    <li>Inter-arrival times are i.i.d. exponential with mean \(1/\lambda\).</li>
+                    <li>Poisson process is a ______ random process. <b>(a) Discrete</b></li>
+                    <li>If every state is reachable from every other state, then a Markov chain is said to be ______. <b>(b) Irreducible</b></li>
+                    <li>Which of the following is true for a linear system? <b>(a) f[a₁X₁(t) + a₂X₂(t)] = a₁f[X₁(t)] + a₂f[X₂(t)]</b></li>
+                    <li>The power spectral densities of the input and output processes in the system connected by the system is <b>(d) \(S_{YY}(\omega) = S_{XX}(\omega) |H(\omega)|^2\)</b></li>
+                    <li>If X(t) is the input and h(t) be the system weighting function and Y(t) is the output, then Y(t) is given by <b>(a) \(Y(t) = \int_{-\infty}^{\infty} h(u)X(t – u) du\)</b></li>
                 </ol>
-            </div>
-        </div>
-        <div class="question">
-            <strong>9. Define time invariant system.</strong>
-            <div class="solution">
-                <p>A system \(\mathcal{T}\) is time-invariant if a time shift in the input causes an identical time shift in the output: \(\mathcal{T}[x(t-t_0)] = y(t-t_0)\), where \(y(t) = \mathcal{T}[x(t)]\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>10. Check whether the system \(y(t) = x^2(t)\) is linear.</strong>
-            <div class="solution">
-                <p>Check homogeneity: \(\mathcal{T}[ax(t)] = (ax(t))^2 = a^2x^2(t)\). \(a\mathcal{T}[x(t)] = ax^2(t)\).</p>
-                <p>\(a^2x^2(t) \neq ax^2(t)\) for all \(a\).</p>
-                <p class="answer">Answer: Not linear.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>11. If the system has impulse response \(h(t) = \begin{cases} \frac{1}{2c}, & |t| \le c \\ 0, & |t| > c \end{cases}\). Write relation between input/output spectrums.</strong>
-            <div class="solution">
-                <p>\(H(\omega) = \mathcal{F}\{h(t)\} = \int_{-c}^{c} \frac{1}{2c} e^{-j\omega t} dt = \frac{\sin(\omega c)}{\omega c}\).</p>
-                <p>If spectrums are Fourier Transforms: \(Y(\omega) = H(\omega)X(\omega) = \frac{\sin(\omega c)}{\omega c} X(\omega)\).</p>
-                <p>If spectrums are PSDs: \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega) = \left(\frac{\sin(\omega c)}{\omega c}\right)^2 S_{XX}(\omega)\).</p>
-                <p class="answer">Relations as above.</p>
-            </div>
-        </div>
+            </section>
 
-        <h3 class="part-title">PART - C (3 × 11 = 33 Marks)</h3>
-        <div class="question">
-            <strong>12. a) Gaussian process \(\mu(t) = 10\), \(C(t_1, t_2) = 16e^{-|t_1-t_2|}\). Find (i) \(P(X(10) \le 8)\), (ii) \(P(|X(10) - X(6)| \le 4)\).</strong>
-            <div class="solution">
-                <p>i) \(X(10) \sim N(10, 16)\). \(P(X(10) \le 8) = P(Z \le \frac{8-10}{4}) = P(Z \le -0.5) = 0.3085\).</p>
-                <p>ii) Let \(Y = X(10)-X(6)\). \(E[Y]=0\). \(Var(Y) = 32(1-e^{-4}) \approx 31.4139\). \(\sigma_Y \approx 5.6048\).</p>
-                <p>\(P(|Y| \le 4) = P(\frac{-4}{5.6048} \le Z \le \frac{4}{5.6048}) \approx P(-0.71 \le Z \le 0.71) = 0.5222\).</p>
-                <p class="answer">Answers: i) \(0.3085\). ii) \(0.5222\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>12. b) (Or) Markov chain with \(P = \begin{pmatrix} 0.1 & 0.5 & 0.4 \\ 0.6 & 0.2 & 0.2 \\ 0.4 & 0.3 & 0.3 \end{pmatrix}\), \(p^{(0)} = (0.7, 0.2, 0.1)\). Find (i) \(P(X_2=3, X_1=3, X_0=2)\) (ii) \(P(X_3=2, X_2=3, X_1=3, X_0=2)\) (iii) \(P(X_2=3)\).</strong>
-            <div class="solution">
-                <p>i) \(P_{33}P_{23}P(X_0=2) = (0.3)(0.2)(0.2) = 0.012\).</p>
-                <p>ii) \(P_{32}P_{33}P_{23}P(X_0=2) = (0.3)(0.3)(0.2)(0.2) = 0.0036\).</p>
-                <p>iii) \(P^2 = \begin{pmatrix} 0.47 & 0.27 & 0.26 \\ 0.26 & 0.40 & 0.34 \\ 0.34 & 0.35 & 0.31 \end{pmatrix}\). \(p^{(2)} = p^{(0)}P^2\).</p>
-                <p>\(P(X_2=3) = (0.7)(0.26) + (0.2)(0.34) + (0.1)(0.31) = 0.182+0.068+0.031 = 0.281\).</p>
-                <p class="answer">Answers: i) \(0.012\). ii) \(0.0036\). iii) \(0.281\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>13. a) Input \(X(t)\) (WSS) to LTI system \(h(t)\), output \(Y(t)\). Prove \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)\).</strong>
-            <div class="solution">
-                <p>\(Y(t) = X(t) * h(t)\). \(R_{YY}(\tau) = R_{XX}(\tau) * h(\tau) * h^*(-\tau)\).</p>
-                <p>Taking Fourier Transform: \(S_{YY}(\omega) = S_{XX}(\omega) \cdot \mathcal{F}\{h(\tau)\} \cdot \mathcal{F}\{h^*(-\tau)\}\).</p>
-                <p>\(\mathcal{F}\{h(\tau)\} = H(\omega)\). \(\mathcal{F}\{h^*(-\tau)\} = H^*(\omega)\).</p>
-                <p>So, \(S_{YY}(\omega) = S_{XX}(\omega) H(\omega) H^*(\omega) = |H(\omega)|^2 S_{XX}(\omega)\).</p>
-                <p class="answer">Proof complete.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>13. b) (Or) Input \(X(t)\) with \(R_{XX}(\tau) = e^{-2|\tau|}\) to LTI system \(h(t) = 2e^{-t}u(t)\). Find i) \(R_{XY}(\tau)\), ii) \(S_{XY}(\omega)\). (Assuming X(t) is input, Y(t) is output)</strong>
-            <div class="solution">
-                <p>i) \(R_{XY}(\tau) = R_{XX}(\tau) * h(\tau) = \int_0^{\infty} e^{-2|\tau-u|} (2e^{-u}) du\).</p>
-                <p>For \(\tau \ge 0\): \(R_{XY}(\tau) = \frac{8}{3}e^{-\tau} - 2e^{-2\tau}\).</p>
-                <p>For \(\tau < 0\): \(R_{XY}(\tau) = \frac{2}{3}e^{2\tau}\).</p>
-                <p>ii) \(S_{XY}(\omega) = S_{XX}(\omega)H(\omega)\).</p>
-                <p>\(S_{XX}(\omega) = \frac{4}{4+\omega^2}\). \(H(\omega) = \frac{2}{1+j\omega}\).</p>
-                <p>\(S_{XY}(\omega) = \frac{4}{4+\omega^2} \cdot \frac{2}{1+j\omega} = \frac{8}{(4+\omega^2)(1+j\omega)} = \frac{8(1-j\omega)}{(4+\omega^2)(1+\omega^2)}\).</p>
-                <p class="answer">Answers as detailed.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. a) (i) Poisson process, rate \(\lambda=2/\text{min}\). Interval T. Find P(T>1), P(1<T<2), P(T<4).</strong>
-            <div class="solution">
-                <p>T is exponential with \(\lambda=2\). \(f(t)=2e^{-2t}\), \(F(t)=1-e^{-2t}\).</p>
-                <p>P(T>1) = \(1-F(1) = e^{-2} \approx 0.1353\).</p>
-                <p>P(1<T<2) = \(F(2)-F(1) = (1-e^{-4})-(1-e^{-2}) = e^{-2}-e^{-4} \approx 0.1170\).</p>
-                <p>P(T<4) = \(F(4) = 1-e^{-8} \approx 0.9997\).</p>
-                <p class="answer">Answers: \(\approx 0.1353\), \(\approx 0.1170\), \(\approx 0.9997\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. a) (ii) Input to LTI system is WSS, prove output is WSS.</strong>
-            <div class="solution">
-                <p>1. \(E[Y(t)] = E[\int h(u)X(t-u)du] = \mu_X \int h(u)du = \mu_X H(0)\) (constant).</p>
-                <p>2. \(R_{YY}(t, t+\tau) = \iint h(u)h^*(v)R_{XX}(\tau-v+u)dudv\). This depends only on \(\tau\), not \(t\).</p>
-                <p class="answer">Proof complete. Output is WSS.</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. b) (Or) (i) Prove sum of two independent Poisson processes is Poisson.</strong>
-            <div class="solution">
-                <p>Let \(N(t) = N_1(t)+N_2(t)\) with rates \(\lambda_1, \lambda_2\).</p>
-                <p>1. \(N(0)=N_1(0)+N_2(0)=0\).</p>
-                <p>2. Increments of \(N(t)\) are sums of independent increments from \(N_1(t)\) and \(N_2(t)\), so they are independent.</p>
-                <p>3. \(N(\tau) = N_1(\tau)+N_2(\tau)\). Sum of independent Poisson RVs is Poisson with mean \((\lambda_1+\lambda_2)\tau\).</p>
-                <p class="answer">Proof complete. Sum is Poisson with rate \(\lambda_1+\lambda_2\).</p>
-            </div>
-        </div>
-        <div class="question">
-            <strong>14. b) (Or) (ii) Band-limited white noise \(S_{NN}(\omega) = N_0/2\) for \(|\omega \pm \omega_0| < \omega_B\). Find autocorrelation.</strong>
-            <div class="solution">
-                <p>\(R_{NN}(\tau) = \frac{1}{2\pi} \int S_{NN}(\omega)e^{j\omega\tau}d\omega\)</p>
-                <p>\(= \frac{N_0}{4\pi} \left( \int_{-\omega_0-\omega_B}^{-\omega_0+\omega_B} e^{j\omega\tau}d\omega + \int_{\omega_0-\omega_B}^{\omega_0+\omega_B} e^{j\omega\tau}d\omega \right)\)</p>
-                <p>\(= \frac{N_0}{4\pi} \left( e^{-j\omega_0\tau}\frac{2\sin(\omega_B\tau)}{\tau} + e^{j\omega_0\tau}\frac{2\sin(\omega_B\tau)}{\tau} \right)\)</p>
-                <p>\(= \frac{N_0}{4\pi} \frac{2\sin(\omega_B\tau)}{\tau} (2\cos(\omega_0\tau)) = \frac{N_0}{\pi\tau}\cos(\omega_0\tau)\sin(\omega_B\tau)\)</p>
-                <p>\(= \frac{N_0\omega_B}{\pi} \cos(\omega_0\tau) \text{sinc}_N(\omega_B\tau)\).</p>
-                <p class="answer">Answer: \(R_{NN}(\tau) = \frac{N_0\omega_B}{\pi} \cos(\omega_0\tau) \text{sinc}_N(\omega_B\tau)\).</p>
-            </div>
-        </div>
-    </div>
+            <section id="partB3">
+                <h3>Part B (12 Marks)</h3>
 
+                <article class="question">
+                    <h4>Define Markov process.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>A Markov process is a stochastic process that satisfies the Markov property, which states that the future state of the process depends only on its current state and not on its past states. In other words, given the present state, the future is independent of the past.</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Let A = [[0, 1], [1/2, 1/2]] be a stochastic matrix. Check whether it is regular.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>A stochastic matrix is regular if some power of the matrix has all positive entries. Let's calculate A²:</p>
+                        <p>\(A^2 = \begin{bmatrix} 0 & 1 \\ \frac{1}{2} & \frac{1}{2} \end{bmatrix} \begin{bmatrix} 0 & 1 \\ \frac{1}{2} & \frac{1}{2} \end{bmatrix} = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{4} & \frac{3}{4} \end{bmatrix}\)</p>
+                        <p>Since A² has all positive entries, the matrix A is regular.</p>
+                        <p><b>Answer: Yes, A is regular.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>State any two properties of a Poisson process.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>1. The number of events occurring in disjoint intervals are independent.</p>
+                        <p>2. The probability of k events occurring in an interval of length t is given by the Poisson distribution: \(P(N(t) = k) = \frac{e^{-\lambda t} (\lambda t)^k}{k!}\), where λ is the average rate of events.</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Define time invariant system.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>A system is said to be time-invariant (or shift-invariant) if its behavior does not change with time. This means that if an input signal x(t) produces an output signal y(t), then a time-shifted input x(t - t₀) will produce a time-shifted output y(t - t₀) for any time shift t₀.</p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>Check whether the system y(t) = x²(t) is linear.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>To check for linearity, we need to verify the superposition principle. Let x₁(t) produce y₁(t) = x₁²(t) and x₂(t) produce y₂(t) = x₂²(t).</p>
+                        <p>Now, consider the input a₁x₁(t) + a₂x₂(t), where a₁ and a₂ are constants. The output is \(y(t) = (a_1x_1(t) + a_2x_2(t))^2 = a_1^2x_1^2(t) + 2a_1a_2x_1(t)x_2(t) + a_2^2x_2^2(t)\).</p>
+                        <p>For the system to be linear, we should have \(y(t) = a_1y_1(t) + a_2y_2(t) = a_1x_1^2(t) + a_2x_2^2(t)\). However, this is not the case because of the additional terms \(2a_1a_2x_1(t)x_2(t)\), \(a_1^2x_1^2(t)\) and \(a_2^2x_2^2(t)\).</p>
+                        <p>Therefore, the system is not linear.</p>
+                        <p><b>Answer: The system is not linear.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>If the system has the impulse response
+                        \(h(t) = \begin{cases} \frac{1}{2c}, & |t| \leq c \\ 0, & |t| > c \end{cases}\)
+                        Write down the relation between the spectrums of input X(t) and output Y(t).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>The relationship between the input and output spectrums of a linear time-invariant (LTI) system is given by \(Y(\omega) = H(\omega)X(\omega)\), where \(Y(\omega)\) is the spectrum of the output, \(H(\omega)\) is the frequency response of the system, and \(X(\omega)\) is the spectrum of the input.</p>
+                        <p>\(H(\omega)\) is the Fourier transform of the impulse response h(t).</p>
+                        <p>\(H(\omega) = \int_{-\infty}^{\infty} h(t)e^{-j\omega t} \, dt = \int_{-c}^{c} \frac{1}{2c}e^{-j\omega t} \, dt = \frac{1}{2c} \left[\frac{e^{-j\omega t}}{-j\omega}\right]_{-c}^{c} = \frac{1}{2c} \frac{e^{j\omega c} - e^{-j\omega c}}{j\omega} = \frac{\sin(\omega c)}{\omega c}\)</p>
+                        <p>Therefore, \(Y(\omega) = \frac{\sin(\omega c)}{\omega c} X(\omega)\)</p>
+                        <p><b>Answer: \(Y(\omega) = \frac{\sin(\omega c)}{\omega c} X(\omega)\)</b></p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="partC3">
+                <h3>Part C (33 Marks)</h3>
+
+                <article class="question">
+                    <h4>a) If {X(t)} is a Gaussian process with \(µ(t) = 10\) and \(C(t₁, t₂) = 16e^{-|t₁-t₂|}\), find the probability that (i) X(10) ≤ 8, (ii) |X(10) – X(6)| ≤ 4.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) \(P(X(10) \leq 8)\):</b></p>
+                        <p>Since \(X(t)\) is a Gaussian process, \(X(10)\) is a Gaussian random variable with mean \(\mu(10) = 10\) and variance \(C(10, 10) = 16e^{-|10-10|} = 16e^0 = 16\).  Therefore, the standard deviation is \(\sigma = \sqrt{16} = 4\).</p>
+                        <p>We want to find \(P(X(10) \leq 8)\).  We can standardize this by calculating the Z-score:</p>
+                        <p>\(Z = \frac{X(10) - \mu(10)}{\sigma} = \frac{8 - 10}{4} = -\frac{2}{4} = -0.5\)</p>
+                        <p>So, \(P(X(10) \leq 8) = P(Z \leq -0.5) = \Phi(-0.5) = 1 - \Phi(0.5)\), where \(\Phi\) is the standard normal CDF.</p>
+                        <p>From a standard normal table, \(\Phi(0.5) \approx 0.6915\), so \(P(X(10) \leq 8) \approx 1 - 0.6915 = 0.3085\)</p>
+                        <p><b>(ii) \(P(|X(10) - X(6)| \leq 4)\):</b></p>
+                        <p>Let \(Y = X(10) - X(6)\).  Since \(X(t)\) is a Gaussian process, \(Y\) is also a Gaussian random variable.</p>
+                        <p>\(E[Y] = E[X(10) - X(6)] = E[X(10)] - E[X(6)] = \mu(10) - \mu(6) = 10 - 10 = 0\)</p>
+                        <p>\(Var(Y) = Var(X(10) - X(6)) = Var(X(10)) + Var(X(6)) - 2Cov(X(10), X(6))\)</p>
+                        <p>\(= C(10, 10) + C(6, 6) - 2C(10, 6) = 16e^0 + 16e^0 - 2(16e^{-|10-6|}) = 16 + 16 - 32e^{-4} = 32 - 32e^{-4} = 32(1 - e^{-4})\)</p>
+                        <p>\(Var(Y) \approx 32(1 - 0.0183) \approx 32(0.9817) \approx 31.414\)</p>
+                        <p>\(\sigma_Y = \sqrt{Var(Y)} \approx \sqrt{31.414} \approx 5.605\)</p>
+                        <p>We want to find \(P(|Y| \leq 4) = P(-4 \leq Y \leq 4)\).  We can standardize this by calculating the Z-scores:</p>
+                        <p>\(Z_1 = \frac{-4 - 0}{5.605} \approx -0.714\) and \(Z_2 = \frac{4 - 0}{5.605} \approx 0.714\)</p>
+                        <p>So, \(P(-4 \leq Y \leq 4) = P(-0.714 \leq Z \leq 0.714) = \Phi(0.714) - \Phi(-0.714) = \Phi(0.714) - (1 - \Phi(0.714)) = 2\Phi(0.714) - 1\)</p>
+                        <p>From a standard normal table, \(\Phi(0.714) \approx 0.7624\), so \(P(|Y| \leq 4) \approx 2(0.7624) - 1 = 1.5248 - 1 = 0.5248\)</p>
+                        <p><b>Answer: (i) \(P(X(10) \leq 8) \approx 0.3085\), (ii) \(P(|X(10) - X(6)| \leq 4) \approx 0.5248\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) The probability matrix of a Markov chain {X_n}, n = 1,2,3.... having three states 1, 2 and 3 is
+                        <br>
+                        \(P = \begin{bmatrix} 0.1 & 0.5 & 0.4 \\ 0.6 & 0.2 & 0.2 \\ 0.4 & 0.3 & 0.3 \end{bmatrix}\)
+                        <br>
+                        and the initial distribution is p(0) = (0.7, 0.2, 0.1). Find
+                        <br>
+                        (i) \(P(X_2 = 3, X_1 = 3, X_0 = 2)\) (Assuming X₀ state corresponds to p(0) index, so P(X₀=1)=0.7, P(X₀=2)=0.2, P(X₀=3)=0.1)
+                        <br>
+                        (ii) \(P(X_3 = 2, X_2 = 3, X_1 = 3, X_0 = 2)\)
+                        <br>
+                        (iii) \(P(X_2 = 3)\)</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) \(P(X_2 = 3, X_1 = 3, X_0 = 2)\):</b></p>
+                        <p>Using the Markov property, we have:</p>
+                        <p>\(P(X_2 = 3, X_1 = 3, X_0 = 2) = P(X_2 = 3 \mid X_1 = 3, X_0 = 2) P(X_1 = 3 \mid X_0 = 2) P(X_0 = 2)\)</p>
+                        <p>\(= P(X_2 = 3 \mid X_1 = 3) P(X_1 = 3 \mid X_0 = 2) P(X_0 = 2)\)</p>
+                        <p>From the transition matrix P, we have:</p>
+                        <p>\(P(X_2 = 3 \mid X_1 = 3) = P_{33} = 0.3\)</p>
+                        <p>\(P(X_1 = 3 \mid X_0 = 2) = P_{23} = 0.2\)</p>
+                        <p>From the initial distribution, \(P(X_0 = 2) = 0.2\)</p>
+                        <p>Therefore, \(P(X_2 = 3, X_1 = 3, X_0 = 2) = 0.3 \cdot 0.2 \cdot 0.2 = 0.012\)</p>
+                        <p><b>(ii) \(P(X_3 = 2, X_2 = 3, X_1 = 3, X_0 = 2)\):</b></p>
+                        <p>Using the Markov property, we have:</p>
+                        <p>\(P(X_3 = 2, X_2 = 3, X_1 = 3, X_0 = 2) = P(X_3 = 2 \mid X_2 = 3) P(X_2 = 3 \mid X_1 = 3) P(X_1 = 3 \mid X_0 = 2) P(X_0 = 2)\)</p>
+                        <p>From the transition matrix P, we have:</p>
+                        <p>\(P(X_3 = 2 \mid X_2 = 3) = P_{32} = 0.3\)</p>
+                        <p>\(P(X_2 = 3 \mid X_1 = 3) = P_{33} = 0.3\)</p>
+                        <p>\(P(X_1 = 3 \mid X_0 = 2) = P_{23} = 0.2\)</p>
+                        <p>From the initial distribution, \(P(X_0 = 2) = 0.2\)</p>
+                        <p>                        <p>Therefore, \(P(X_3 = 2, X_2 = 3, X_1 = 3, X_0 = 2) = 0.3 \cdot 0.3 \cdot 0.2 \cdot 0.2 = 0.0036\)</p>
+                        <p><b>(iii) \(P(X_2 = 3)\):</b></p>
+                        <p>\(P(X_2 = 3) = \sum_{i=1}^{3} P(X_2 = 3 \mid X_0 = i) P(X_0 = i)\)</p>
+                        <p>\(= P(X_2 = 3 \mid X_0 = 1) P(X_0 = 1) + P(X_2 = 3 \mid X_0 = 2) P(X_0 = 2) + P(X_2 = 3 \mid X_0 = 3) P(X_0 = 3)\)</p>
+                        <p>We need to find \(P(X_2 = 3 \mid X_0 = i)\), which is the (i, 3) element of the matrix \(P^2\)</p>
+                        <p>\(P^2 = \begin{bmatrix} 0.1 & 0.5 & 0.4 \\ 0.6 & 0.2 & 0.2 \\ 0.4 & 0.3 & 0.3 \end{bmatrix} \begin{bmatrix} 0.1 & 0.5 & 0.4 \\ 0.6 & 0.2 & 0.2 \\ 0.4 & 0.3 & 0.3 \end{bmatrix} = \begin{bmatrix} 0.01+0.3+0.16 & 0.05+0.1+0.12 & 0.04+0.1+0.12 \\ 0.06+0.12+0.08 & 0.3+0.04+0.06 & 0.24+0.04+0.06 \\ 0.04+0.18+0.12 & 0.2+0.06+0.09 & 0.16+0.06+0.09 \end{bmatrix} = \begin{bmatrix} 0.47 & 0.27 & 0.26 \\ 0.26 & 0.4 & 0.34 \\ 0.34 & 0.35 & 0.31 \end{bmatrix}\)</p>
+                        <p>So, \(P(X_2 = 3 \mid X_0 = 1) = 0.26\), \(P(X_2 = 3 \mid X_0 = 2) = 0.34\), \(P(X_2 = 3 \mid X_0 = 3) = 0.31\)</p>
+                        <p>\(P(X_2 = 3) = 0.26 \cdot 0.7 + 0.34 \cdot 0.2 + 0.31 \cdot 0.1 = 0.182 + 0.068 + 0.031 = 0.281\)</p>
+                        <p><b>Answer: (i) 0.012, (ii) 0.0036, (iii) 0.281</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>a) Let X(t) be a WSS process which is the input to a linear time-invariant system with unit impulse h(t) and output Y(t), then prove that \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)\), where H(ω) is Fourier transform of h(t).</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>Let \(X(t)\) be a wide-sense stationary (WSS) process, \(h(t)\) be the impulse response of a linear time-invariant (LTI) system, and \(Y(t)\) be the output. We want to prove that \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)\), where \(S_{YY}(\omega)\) is the power spectral density (PSD) of the output, \(S_{XX}(\omega)\) is the PSD of the input, and \(H(\omega)\) is the Fourier transform of \(h(t)\).</p>
+                        <p>The output \(Y(t)\) is given by the convolution of the input \(X(t)\) and the impulse response \(h(t)\):</p>
+                        <p>\(Y(t) = \int_{-\infty}^{\infty} h(\tau) X(t - \tau) \, d\tau\)</p>
+                        <p>The autocorrelation function of the output is:</p>
+                        <p>\(R_{YY}(t_1, t_2) = E[Y(t_1)Y(t_2)] = E\left[\int_{-\infty}^{\infty} h(\tau_1) X(t_1 - \tau_1) \, d\tau_1 \int_{-\infty}^{\infty} h(\tau_2) X(t_2 - \tau_2) \, d\tau_2\right]\)</p>
+                        <p>\(= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(\tau_1) h(\tau_2) E[X(t_1 - \tau_1) X(t_2 - \tau_2)] \, d\tau_1 \, d\tau_2\)</p>
+                        <p>Since \(X(t)\) is WSS, \(E[X(t_1 - \tau_1) X(t_2 - \tau_2)] = R_{XX}(t_2 - \tau_2 - (t_1 - \tau_1)) = R_{XX}(t_2 - t_1 - (\tau_2 - \tau_1))\)</p>
+                        <p>Let \(\tau = t_2 - t_1\). Then, \(R_{YY}(\tau) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(\tau_1) h(\tau_2) R_{XX}(\tau - (\tau_2 - \tau_1)) \, d\tau_1 \, d\tau_2\)</p>
+                        <p>\(= \int_{-\infty}^{\infty} R_{XX}(\tau - \lambda) \left[\int_{-\infty}^{\infty} h(\tau_1) h(\lambda + \tau_1) \, d\tau_1\right] \, d\lambda\)</p>
+                        <p>The term in the brackets is the cross-correlation of \(h(t)\) with itself, shifted by \(\lambda\), which is the autocorrelation of \(h(t)\): \(R_{hh}(\lambda) = \int_{-\infty}^{\infty} h(\tau_1) h(\lambda + \tau_1) \, d\tau_1\)</p>
+                        <p>So, \(R_{YY}(\tau) = \int_{-\infty}^{\infty} R_{XX}(\tau - \lambda) R_{hh}(\lambda) \, d\lambda = R_{XX}(\tau) * R_{hh}(\tau)\), where * denotes convolution.</p>
+                        <p>Taking the Fourier transform of both sides:</p>
+                        <p>\(S_{YY}(\omega) = \mathcal{F}\{R_{YY}(\tau)\} = \mathcal{F}\{R_{XX}(\tau) * R_{hh}(\tau)\} = \mathcal{F}\{R_{XX}(\tau)\} \cdot \mathcal{F}\{R_{hh}(\tau)\} = S_{XX}(\omega) \cdot H(\omega)H^*(\omega)\)</p>
+                        <p>Since \(H(\omega)H^*(\omega) = |H(\omega)|^2\), we have \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)\)</p>
+                        <p><b>Answer: \(S_{YY}(\omega) = |H(\omega)|^2 S_{XX}(\omega)\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) A random process X(t) with \(R_{XX}(\tau) = e^{-2|\tau|}\) is the output to a linear system whose impulse response is \(h(t) = 2e^{-t}\), \(t \geq 0\). Find
+                        <br>
+                        i) cross correlation \(R_{XY}(\tau)\)
+                        <br>
+                        ii) Cross spectral density \(S_{XY}(\omega)\)</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p>Let \(X(t)\) be the output of the system and \(W(t)\) be the input. Then, \(X(t) = \int_{-\infty}^{\infty} h(u) W(t - u) \, du\)</p>
+                        <p>Given \(R_{XX}(\tau) = e^{-2|\tau|}\) and \(h(t) = 2e^{-t}u(t)\), where \(u(t)\) is the unit step function.</p>
+                        <p><b>(i) Cross-correlation \(R_{WX}(\tau)\):</b></p>
+                        <p>\(R_{WX}(\tau) = E[W(t)X(t + \tau)] = E\left[W(t) \int_{-\infty}^{\infty} h(u) W(t + \tau - u) \, du\right] = \int_{-\infty}^{\infty} h(u) E[W(t) W(t + \tau - u)] \, du\)</p>
+                        <p>\(= \int_{-\infty}^{\infty} h(u) R_{WW}(\tau - u) \, du\)</p>
+                        <p>Since \(R_{XX}(\tau) = e^{-2|\tau|}\), we know that \(S_{XX}(\omega) = \frac{4}{4 + \omega^2}\). Also, \(H(\omega) = \frac{2}{1 + j\omega}\)</p>
+                        <p>Using \(S_{XX}(\omega) = |H(\omega)|^2 S_{WW}(\omega)\), we have \(S_{WW}(\omega) = \frac{S_{XX}(\omega)}{|H(\omega)|^2} = \frac{\frac{4}{4 + \omega^2}}{\frac{4}{1 + \omega^2}} = \frac{1 + \omega^2}{4 + \omega^2}\)</p>
+                        <p>Then, \(R_{WW}(\tau) = \mathcal{F}^{-1}\{S_{WW}(\omega)\}\).  We can decompose \(S_{WW}(\omega)\) as \(S_{WW}(\omega) = 1 - \frac{3}{4 + \omega^2}\), so \(R_{WW}(\tau) = \delta(\tau) - \frac{3}{4} e^{-2|\tau|}\)</p>
+                        <p>\(R_{WX}(\tau) = \int_{-\infty}^{\infty} h(u) R_{WW}(\tau - u) \, du = \int_{-\infty}^{\infty} 2e^{-u}u(u) \left[\delta(\tau - u) - \frac{3}{4} e^{-2|\tau - u|}\right] \, du\)</p>
+                        <p>\(= 2e^{-\tau}u(\tau) - \frac{3}{2} \int_{0}^{\infty} e^{-u} e^{-2|\tau - u|} \, du\)</p>
+                        <p>For \(\tau > 0\), \(R_{WX}(\tau) = 2e^{-\tau} - \frac{3}{2} e^{-2\tau}\)</p>
+                        <p>For \(\tau < 0\), \(R_{WX}(\tau) = \frac{1}{2}e^{\tau}\)</p>
+                        <p><b>(ii) Cross-spectral density \(S_{WX}(\omega)\):</b></p>
+                        <p>\(S_{WX}(\omega) = H(\omega) S_{WW}(\omega) = \frac{2}{1 + j\omega} \cdot \frac{1 + \omega^2}{4 + \omega^2}\)</p>
+                        <p><b>Answer: (i) See above, (ii) \(S_{WX}(\omega) = \frac{2(1 + \omega^2)}{(1 + j\omega)(4 + \omega^2)}\)</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>a) (i) If customers arrive in accordance with the Poisson process with mean rate of 2 per minute, find the probability that the interval between 2 consecutive arrivals is
+                        <br>
+                        (i) more than 1 minute
+                        <br>
+                        (ii) between 1 and 2 minutes
+                        <br>
+                        (iii) less than 4 minutes. (Note: OCR shows (3), assumed (iii))
+                        <br>
+                        (ii) If the input to a time-invariant, stable linear system is WSS process, prove that the output will also be a WSS process.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) Interarrival times in a Poisson process:</b></p>
+                        <p>The interarrival times in a Poisson process follow an exponential distribution with parameter \(\lambda\), where \(\lambda\) is the mean rate of arrivals. In this case, \(\lambda = 2\) per minute.</p>
+                        <p>The probability density function (PDF) of the exponential distribution is \(f(t) = \lambda e^{-\lambda t}\) for \(t \geq 0\).</p>
+                        <p>The cumulative distribution function (CDF) is \(F(t) = 1 - e^{-\lambda t}\) for \(t \geq 0\).</p>
+                        <p>(i) More than 1 minute: \(P(T > 1) = 1 - P(T \leq 1) = 1 - F(1) = 1 - (1 - e^{-2 \cdot 1}) = e^{-2} \approx 0.1353\)</p>
+                        <p>(ii) Between 1 and 2 minutes: \(P(1 < T < 2) = F(2) - F(1) = (1 - e^{-2 \cdot 2}) - (1 - e^{-2 \cdot 1}) = e^{-2} - e^{-4} \approx 0.1353 - 0.0183 = 0.1170\)</p>
+                        <p>(iii) Less than 4 minutes: \(P(T < 4) = F(4) = 1 - e^{-2 \cdot 4} = 1 - e^{-8} \approx 1 - 0.0003 = 0.9997\)</p>
+                        <p><b>(ii) WSS input to a stable LTI system:</b></p>
+                        <p>Let \(X(t)\) be the input WSS process, \(h(t)\) be the impulse response of the stable LTI system, and \(Y(t)\) be the output. We want to show that \(Y(t)\) is also WSS.</p>
+                        <p>For \(Y(t)\) to be WSS, we need to show that \(E[Y(t)]\) is constant and \(R_{YY}(t_1, t_2)\) depends only on \(t_2 - t_1\).</p>
+                        <p>\(Y(t) = \int_{-\infty}^{\infty} h(\tau) X(t - \tau) \, d\tau\)</p>
+                        <p>\(E[Y(t)] = E\left[\int_{-\infty}^{\infty} h(\tau) X(t - \tau) \, d\tau\right] = \int_{-\infty}^{\infty} h(\tau) E[X(t - \tau)] \, d\tau\)</p>
+                        <p>Since \(X(t)\) is WSS, \(E[X(t - \tau)] = \mu_X\) (constant). Therefore, \(E[Y(t)] = \mu_X \int_{-\infty}^{\infty} h(\tau) \, d\tau = \mu_X H(0)\), where \(H(0)\) is the DC gain of the system. Since the system is stable, \(\int_{-\infty}^{\infty} |h(\tau)| \, d\tau < \infty\), so \(H(0)\) is finite. Thus, \(E[Y(t)]\) is constant.</p>
+                        <p>\(R_{YY}(t_1, t_2) = E[Y(t_1)Y(t_2)] = E\left[\int_{-\infty}^{\infty} h(\tau_1) X(t_1 - \tau_1) \, d\tau_1 \int_{-\infty}^{\infty} h(\tau_2) X(t_2 - \tau_2) \, d\tau_2\right]\)</p>
+                        <p>\(= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(\tau_1) h(\tau_2) E[X(t_1 - \tau_1) X(t_2 - \tau_2)] \, d\tau_1 \, d\tau_2\)</p>
+                        <p>Since \(X(t)\) is WSS, \(E[X(t_1 - \tau_1) X(t_2 - \tau_2)] = R_{XX}(t_2 - \tau_2 - (t_1 - \tau_1)) = R_{XX}(t_2 - t_1 - (\tau_2 - \tau_1))\)</p>
+                        <p>Let \(\tau = t_2 - t_1\). Then, \(R_{YY}(\tau) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(\tau_1) h(\tau_2) R_{XX}(\tau - (\tau_2 - \tau_1)) \, d\tau_1 \, d\tau_2\)</p>
+                        <p>This depends only on \(\tau = t_2 - t_1\), so \(Y(t)\) is WSS.</p>
+                        <p><b>Answer: (i) \(P(T > 1) \approx 0.1353\), \(P(1 < T < 2) \approx 0.1170\), \(P(T < 4) \approx 0.9997\), (ii) Proof above.</b></p>
+                    </div>
+                </article>
+
+                <article class="question">
+                    <h4>b) (i) Prove that the sum of two independent Poisson processes is again a Poisson process.
+                        <br>
+                        (ii) If {N(t)} is a band limited white noise centered at carrier frequency ω₀ such that
+                        \(S_{NN}(\omega) = \begin{cases} \frac{N_0}{2}, & |\omega - \omega_0| < \omega_B \\ 0, & \text{elsewhere} \end{cases}\)
+                        Find the autocorrelation of {N(t)}.</h4>
+                    <div class="solution">
+                        <p><b>Solution:</b></p>
+                        <p><b>(i) Sum of two independent Poisson processes:</b></p>
+                        <p>Let \(N_1(t)\) and \(N_2(t)\) be two independent Poisson processes with rates \(\lambda_1\) and \(\lambda_2\), respectively. Let \(N(t) = N_1(t) + N_2(t)\) be the sum of these processes. We want to show that \(N(t)\) is also a Poisson process.</p>
+                        <p>We need to show that:</p>
+                        <p>1. \(N(0) = 0\)</p>
+                        <p>2. \(N(t)\) has independent increments</p>
+                        <p>3. The number of events in any interval of length t follows a Poisson distribution.</p>
+                        <p>1. Since \(N_1(0) = 0\) and \(N_2(0) = 0\), \(N(0) = N_1(0) + N_2(0) = 0 + 0 = 0\)</p>
+                        <p>2. Let \(t_1 < t_2 < t_3 < t_4\). We need to show that \(N(t_2) - N(t_1)\) and \(N(t_4) - N(t_3)\) are independent.</p>
+                        <p>\(N(t_2) - N(t_1) = (N_1(t_2) + N_2(t_2)) - (N_1(t_1) + N_2(t_1)) = (N_1(t_2) - N_1(t_1)) + (N_2(t_2) - N_2(t_1))\)</p>
+                        <p>\(N(t_4) - N(t_3) = (N_1(t_4) + N_2(t_4)) - (N_1(t_3) + N_2(t_3)) = (N_1(t_4) - N_1(t_3)) + (N_2(t_4) - N_2(t_3))\)</p>
+                        <p>Since \(N_1(t)\) and \(N_2(t)\) have independent increments and are independent of each other, \(N(t_2) - N(t_1)\) and \(N(t_4) - N(t_3)\) are independent.</p>
+                        <p>3. Let \(k\) be the number of events in the interval \((0, t]\). Then, \(P(N(t) = k) = \sum_{i=0}^{k} P(N_1(t) = i, N_2(t) = k - i)\)</p>
+                        <p>Since \(N_1(t)\) and \(N_2(t)\) are independent, \(P(N_1(t) = i, N_2(t) = k - i) = P(N_1(t) = i) P(N_2(t) = k - i)\)</p>
+                        <p>\(P(N(t) = k) = \sum_{i=0}^{k} \frac{e^{-\lambda_1 t} (\lambda_1 t)^i}{i!} \frac{e^{-\lambda_2 t} (\lambda_2 t)^{k - i}}{(k - i)!} = e^{-(\lambda_1 + \lambda_2)t} \sum_{i=0}^{k} \frac{(\lambda_1 t)^i (\lambda_2 t)^{k - i}}{i! (k - i)!}\)</p>
+                        <p>\(= \frac{e^{-(\lambda_1 + \lambda_2)t}}{k!} \sum_{i=0}^{k} \frac{k!}{i! (k - i)!} (\lambda_1 t)^i (\lambda_2 t)^{k - i} = \frac{e^{-(\lambda_1 + \lambda_2)t}}{k!} (\lambda_1 t + \lambda_2 t)^k = \frac{e^{-(\lambda_1 + \lambda_2)t} ((\lambda_1 + \lambda_2)t)^k}{k!}\)</p>
+                        <p>This is a Poisson distribution with rate \(\lambda = \lambda_1 + \lambda_2\). Therefore, \(N(t)\) is a Poisson process with rate \(\lambda_1 + \lambda_2\).</p>
+                        <p><b>(ii) Autocorrelation of band-limited white noise:</b></p>
+                        <p>The autocorrelation function \(R_{NN}(\tau)\) is the inverse Fourier transform of the power spectral density \(S_{NN}(\omega)\):</p>
+                        <p>\(R_{NN}(\tau) = \frac{1}{2\pi} \int_{-\infty}^{\infty} S_{NN}(\omega) e^{j\omega\tau} \, d\omega\)</p>
+                        <p>Given \(S_{NN}(\omega) = \begin{cases} \frac{N_0}{2}, & |\omega - \omega_0| < \omega_B \\ 0, & \text{elsewhere} \end{cases}\)</p>
+                        <p>\(R_{NN}(\tau) = \frac{1}{2\pi} \int_{\omega_0 - \omega_B}^{\omega_0 + \omega_B} \frac{N_0}{2} e^{j\omega\tau} \, d\omega = \frac{N_0}{4\pi} \int_{\omega_0 - \omega_B}^{\omega_0 + \omega_B} e^{j\omega\tau} \, d\omega\)</p>
+                        <p>\(= \frac{N_0}{4\pi} \left[\frac{e^{j\omega\tau}}{j\tau}\right]_{\omega_0 - \omega_B}^{\omega_0 + \omega_B} = \frac{N_0}{4\pi j\tau} \left[e^{j(\omega_0 + \omega_B)\tau} - e^{j(\omega_0 - \omega_B)\tau}\right]\)</p>
+                        <p>\(= \frac{N_0}{4\pi j\tau} e^{j\omega_0\tau} \left[e^{j\omega_B\tau} - e^{-j\omega_B\tau}\right] = \frac{N_0}{4\pi j\tau} e^{j\omega_0\tau} [2j \sin(\omega_B\tau)]\)</p>
+                        <p>\(= \frac{N_0}{2\pi\tau} e^{j\omega_0\tau} \sin(\omega_B\tau)\)</p>
+                        <p>Since \(S_{NN}(\omega)\) is real and even, \(R_{NN}(\tau)\) is real and even. Therefore, we take the real part:</p>
+                        <p>\(R_{NN}(\tau) = \frac{N_0 \sin(\omega_B\tau)}{\pi\tau} \cos(\omega_0\tau)\)</p>
+                        <p><b>Answer: (i) Proof above, (ii) \(R_{NN}(\tau) = \frac{N_0 \omega_B}{\pi} \text{sinc}(\omega_B \tau) \cos(\omega_0 \tau)\)</b></p>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
