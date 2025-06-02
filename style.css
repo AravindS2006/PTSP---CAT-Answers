@@ -1,265 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
-
 body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f7f6;
+    padding: 0;
+    background: linear-gradient(to right, #ECE9E6, #FFFFFF); /* Subtle gradient background */
     color: #333;
-    transition: background-color 0.5s, color 0.5s;
+    line-height: 1.6;
 }
 
-.dark-mode {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-}
-
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode .question strong {
-    color: #ecf0f1;
-}
-.dark-mode .test-title {
-    border-bottom: 2px solid #ecf0f1;
-}
-.dark-mode .part-title {
-    color: #3498db;
-    border-bottom: 1px dashed #3498db;
-}
-.dark-mode .question-set {
-    border: 1px solid #34495e;
-    background-color: #34495e;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-.dark-mode .solution {
-    background-color: #2c3e50;
-    border-left: 3px solid #3498db;
-    color: #bdc3c7;
-}
-.dark-mode .answer {
-    color: #2ecc71;
-}
-.dark-mode .formula {
-    background-color: #3a536b;
-    border: 1px solid #4a6885;
-    color: #ecf0f1;
-}
-.dark-mode table {
-    border-color: #4a6885;
-}
-.dark-mode th, .dark-mode td {
-    border: 1px solid #4a6885;
-}
-.dark-mode th {
-    background-color: #3a536b;
-}
-.dark-mode .question {
-    border-bottom: 1px solid #4a6885;
-}
-
-
-h1 {
+header, footer {
+    background-color: #2c3e50; /* Darker header/footer */
+    color: #fff;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.8em;
-    color: #2c3e50;
+    padding: 1.5em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+    max-width: 960px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the content */
+}
+
+section {
     margin-bottom: 30px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-.test-title {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2em;
-    font-family: 'Roboto', sans-serif;
-    color: #2980b9;
-    border-bottom: 2px solid #2980b9;
-    padding-bottom: 10px;
-    position: relative;
-}
-
-.test-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: #3498db;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-.question-set {
-    border: 1px solid #d1d8e0;
-    padding: 20px 25px;
-    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    transition: transform 0.2s ease-in-out; /* Smooth transition on hover */
 }
 
-.question-set:hover {
-    transform: translateY(-5px);
+section:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
 }
 
-.part-title {
-    font-size: 1.6em;
-    font-family: 'Roboto', sans-serif;
-    color: #16a085;
-    margin-top: 25px;
+h2, h3 {
+    color: #3498db; /* Vibrant heading color */
     margin-bottom: 15px;
-    border-bottom: 1px dashed #16a085;
-    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
 }
 
 .question {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ecf0f1;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 7px;
+    background-color: #f9f9f9;
 }
 
-.question:last-child {
-    border-bottom: none;
+.question h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
-
-.question strong {
-    display: block;
-    margin-bottom: 8px;
-    color: #34495e;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer; /* For collapsible solutions */
-    position: relative;
-    padding-left: 25px; /* Space for icon */
-}
-
-.question strong::before { /* Collapsible icon */
-    content: '▶'; /* Collapsed state */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.9em;
-    color: #3498db;
-    transition: transform 0.3s ease;
-}
-
-.question strong.expanded::before {
-    transform: translateY(-50%) rotate(90deg); /* Expanded state */
-}
-
 
 .solution {
-    background-color: #fdfefe;
-    padding: 15px;
-    border-left: 4px solid #3498db;
     margin-top: 10px;
-    border-radius: 0 5px 5px 0;
-    color: #555;
-    max-height: 0; /* For collapsible solutions */
-    overflow: hidden; /* For collapsible solutions */
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition */
-}
-
-.solution.visible { /* For collapsible solutions */
-    max-height: 2000px; /* Adjust if solutions are very long */
     padding: 15px;
-}
-
-
-.answer {
-    font-weight: bold;
-    color: #27ae60;
-    margin-top: 15px;
-    display: block;
-    padding: 8px;
-    background-color: #e8f8f5;
-    border-left: 3px solid #27ae60;
-    border-radius: 3px;
-}
-
-.formula {
-    margin: 15px auto;
-    padding: 10px 15px;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    text-align: center;
-    font-style: italic;
-    color: #495057;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background-color: #ecf0f1; /* Lighter solution background */
+    border: 1px solid #ddd;
+    border-radius: 7px;
 }
 
 table {
+    width: 100%;
     border-collapse: collapse;
-    width: auto; /* Fit content or specify width */
-    margin: 15px auto; /* Center table if width is auto */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden; /* For rounded corners on table */
+    margin-top: 10px;
 }
 
 th, td {
-    border: 1px solid #dfe6e9;
-    padding: 10px 12px;
-    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
 }
 
 th {
-    background-color: #5dade2;
-    color: white;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-}
-
-td {
-    background-color: #f8f9fa;
-}
-
-/* Scroll to top button */
-#scrollToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#scrollToTopBtn:hover {
-    background-color: #2980b9;
-    transform: scale(1.1);
-}
-
-/* Dark Mode Toggle Button */
-#darkModeToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 15px;
-    background-color: #34495e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 100;
-}
-.dark-mode #darkModeToggle {
-    background-color: #ecf0f1;
+    background-color: #bdc3c7; /* Softer header background */
     color: #2c3e50;
 }
 
-/* MathJax specific styling if needed */
-.MJXc-display { /* For display math */
-    margin: 1em 0 !important;
+/* Code highlighting (optional, requires a library like Prism.js) */
+pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
 }
